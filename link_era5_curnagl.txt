@@ -1,0 +1,25 @@
+vars_folder	short	long	other_folder
+var59	cape	cape	radvars
+?	cbh	cloud_base_height
+?	cin	convective_inhibition
+var143	cp	convective_precipitation	svars
+var218	crr	convective_rain_rate	prate
+?	csf	convective_snowfall_rate_water_equivalent
+var168	d2m	2m_dewpoint_temperature	svars
+?	hcc	high_cloud_cover
+var29	i10fg	instantaneous_10m_wind_gust	beuh
+?	kx	k_index
+?	lcc	low_cloud_cover
+var219	lsrr	large_scale_rain_rate	prate
+var29	mlspr	mean_large_scale_precipitation_rate	prate
+var58	msdrswrf	mean_surface_direct_short_wave_radiation_flux	radvars
+var151	msl	mean_sea_level_pressure	mslp
+var34	mslhf	mean_surface_latent_heat_flux	radvars
+var38	msnlwrf	mean_surface_net_long_wave_radiation_flux	radvars
+var33	msshf	mean_surface_sensible_heat_flux	radvars
+var53	mtdwswrf	mean_top_downward_short_wave_radiation_flux	radvars
+var40	mtnlwrf	mean_top_net_long_wave_radiation_flux	radvars
+var39	mtnswrf	mean_top_net_short_wave_radiation_flux	radvars
+var55	mtpr	mean_total_precipitation_rate	prate
+var54	mvimd	mean_vertically_integrated_moisture_divergence	radvars
+var167	2tm	2m_temperature	svars
