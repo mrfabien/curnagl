@@ -19,15 +19,15 @@ var = 'ERA5_'+year+'_'+folder
 # specificities for some years where the storms are not in the same file
 
 if year == '1991' or year == '1997' or year == '1999' or year == '2006':
-    for i in [1,2,3,10,11,12]:
+    for i in [10,11,12]:
         var = 'ERA5_' + year + '-' + str(i) + '_' + folder
         locals()['dew_point_xr_1'+str(i)] = xr.open_dataset('/work/FAC/FGSE/IDYST/tbeucler/default/raw_data/ECMWF/ERA5/SL/'+folder+'/'+var+'.nc')
 
-    dew_point_xr_11 = xr.concat([dew_point_xr_11, dew_point_xr_12, dew_point_xr_13, dew_point_xr_110, dew_point_xr_111, dew_point_xr_112], dim='time')
-    dew_point_xr_to_combined_1 = dew_point_xr_11
+    dew_point_xr_110 = xr.concat([dew_point_xr_110, dew_point_xr_111, dew_point_xr_112], dim='time')
+    dew_point_xr_to_combined_1 = dew_point_xr_110
     #dew_point_xr_to_combined_1 = dew_point_xr_11.sel(time=slice(year+'-01-01', year+'-03-31'))
     #dew_point_xr_to_combined_11 = dew_point_xr_11.sel(time=slice(year+'-10-31', year+'-12-31'))
-    del dew_point_xr_11, dew_point_xr_12, dew_point_xr_13, dew_point_xr_110, dew_point_xr_111, dew_point_xr_112
+    del dew_point_xr_110, dew_point_xr_111, dew_point_xr_112
     gc.collect()
     if year == '1991':
         next_year = '1992'
@@ -37,14 +37,14 @@ if year == '1991' or year == '1997' or year == '1999' or year == '2006':
         next_year = '2000'
     else: 
         next_year = '2007'
-    for i in [1,2,3,10,11,12]:
+    for i in [1,2,3]:
         next_var = 'ERA5_' + next_year +'-' + str(i) + '_' + folder
         locals()['dew_point_xr_2' + str(i)] = xr.open_dataset('/work/FAC/FGSE/IDYST/tbeucler/default/raw_data/ECMWF/ERA5/SL/'+folder+'/'+next_var+'.nc')
 
-    dew_point_xr_21 = xr.concat([dew_point_xr_21, dew_point_xr_22, dew_point_xr_23, dew_point_xr_210, dew_point_xr_211, dew_point_xr_212], dim='time')
+    dew_point_xr_21 = xr.concat([dew_point_xr_21, dew_point_xr_22, dew_point_xr_23], dim='time')
     dew_point_xr_to_combined_2 = dew_point_xr_21
     #dew_point_xr_to_combined_2 = dew_point_xr_22.sel(time=slice(next_year+'-01-01', next_year+'-03-31'))
-    del dew_point_xr_21, dew_point_xr_22, dew_point_xr_23, dew_point_xr_210, dew_point_xr_211, dew_point_xr_212
+    del dew_point_xr_21, dew_point_xr_22, dew_point_xr_23
     gc.collect()
     
     dew_point_xr_to_combined_1 = xr.concat([dew_point_xr_to_combined_1, dew_point_xr_to_combined_2], dim='time')
