@@ -19,10 +19,15 @@ var = 'ERA5_'+year+'_'+folder
 # specificities for some years where the storms are not in the same file
 
 if year == '1991' or year == '1997' or year == '1999' or year == '2006':
-    dew_point_xr_11 = xr.open_dataset('/work/FAC/FGSE/IDYST/tbeucler/default/raw_data/ECMWF/ERA5/SL/'+folder+'/'+var+'.nc')
-    dew_point_xr_to_combined_1 = dew_point_xr_11.sel(time=slice(year+'-01-01', year+'-03-31'))
-    dew_point_xr_to_combined_11 = dew_point_xr_11.sel(time=slice(year+'-10-31', year+'-12-31'))
-    del dew_point_xr_11 
+    for i in [1,2,3,10,11,12]:
+        var = 'ERA5_' + year + '-' + str(i) + '_' + folder
+        locals()['dew_point_xr_1'+str(i)] = xr.open_dataset('/work/FAC/FGSE/IDYST/tbeucler/default/raw_data/ECMWF/ERA5/SL/'+folder+'/'+var+'.nc')
+
+    dew_point_xr_11 = xr.concat([dew_point_xr_11, dew_point_xr_12, dew_point_xr_13, dew_point_xr_110, dew_point_xr_111, dew_point_xr_112], dim='time')
+    dew_point_xr_to_combined_1 = dew_point_xr_11
+    #dew_point_xr_to_combined_1 = dew_point_xr_11.sel(time=slice(year+'-01-01', year+'-03-31'))
+    #dew_point_xr_to_combined_11 = dew_point_xr_11.sel(time=slice(year+'-10-31', year+'-12-31'))
+    del dew_point_xr_11, dew_point_xr_12, dew_point_xr_13, dew_point_xr_110, dew_point_xr_111, dew_point_xr_112
     gc.collect()
     if year == '1991':
         next_year = '1992'
@@ -32,32 +37,46 @@ if year == '1991' or year == '1997' or year == '1999' or year == '2006':
         next_year = '2000'
     else: 
         next_year = '2007'
-        
-    next_var = 'ERA5_' + next_year + '_' + folder
-    dew_point_xr_22 = xr.open_dataset('/work/FAC/FGSE/IDYST/tbeucler/default/raw_data/ECMWF/ERA5/SL/'+folder+'/'+next_var+'.nc')
-    dew_point_xr_to_combined_2 = dew_point_xr_22.sel(time=slice(next_year+'-01-01', next_year+'-03-31'))
-    del dew_point_xr_22
+    for i in [1,2,3,10,11,12]:
+        next_var = 'ERA5_' + next_year +'-' + str(i) + '_' + folder
+        locals()['dew_point_xr_2' + str(i)] = xr.open_dataset('/work/FAC/FGSE/IDYST/tbeucler/default/raw_data/ECMWF/ERA5/SL/'+folder+'/'+next_var+'.nc')
+
+    dew_point_xr_21 = xr.concat([dew_point_xr_21, dew_point_xr_22, dew_point_xr_23, dew_point_xr_210, dew_point_xr_211, dew_point_xr_212], dim='time')
+    dew_point_xr_to_combined_2 = dew_point_xr_21
+    #dew_point_xr_to_combined_2 = dew_point_xr_22.sel(time=slice(next_year+'-01-01', next_year+'-03-31'))
+    del dew_point_xr_21, dew_point_xr_22, dew_point_xr_23, dew_point_xr_210, dew_point_xr_211, dew_point_xr_212
     gc.collect()
     
-    dew_point_xr = xr.concat([dew_point_xr_to_combined_1, dew_point_xr_to_combined_11, dew_point_xr_to_combined_2], dim='time')
+    dew_point_xr_to_combined_1 = xr.concat([dew_point_xr_to_combined_1, dew_point_xr_to_combined_2], dim='time')
+    dew_point_xr = dew_point_xr_to_combined_1
+    del dew_point_xr_to_combined_1, dew_point_xr_to_combined_2
 else:
+    for i in [1,2,3,10,11,12]:
+        var = 'ERA5_' + year + '-' + str(i) + '_' + folder
+        locals()['dew_point_xr_' + str(i)] = xr.open_dataset('/work/FAC/FGSE/IDYST/tbeucler/default/raw_data/ECMWF/ERA5/SL/'+folder+'/'+var+'.nc')
 
-    servor_path = '/work/FAC/FGSE/IDYST/tbeucler/default/raw_data/ECMWF/ERA5/SL/'+folder+'/'+var+'.nc'
-    dew_point_xr = xr.open_dataset(servor_path)
+    dew_point_xr_1 = xr.concat([dew_point_xr_1, dew_point_xr_2, dew_point_xr_3, dew_point_xr_10, dew_point_xr_11, dew_point_xr_12], dim='time')
+    dew_point_xr_to_combined = dew_point_xr_1
+    del dew_point_xr_1, dew_point_xr_2, dew_point_xr_3, dew_point_xr_10, dew_point_xr_11, dew_point_xr_12
+    gc.collect()
+    dew_point_xr = dew_point_xr_to_combined 
+    del dew_point_xr_to_combined
+    #servor_path = '/work/FAC/FGSE/IDYST/tbeucler/default/raw_data/ECMWF/ERA5/SL/'+folder+'/'+var+'.nc'
+    #dew_point_xr = xr.open_dataset(servor_path)
 
-specific_var = list(dew_point_xr.variables)[3]
+specific_var = list(dew_point_xr.variables)[0]
 
 # %%
 # import all tracks
 
-dates = pd.read_csv('/work/FAC/FGSE/IDYST/tbeucler/default/raw_data/ECMWF/WS_fabien/storms_start_end.csv', sep=',')
+dates = pd.read_csv('/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/storms_start_end.csv', sep=',')
 dates['year'] = dates['start_date'].str[:4]
 
 length_year = dates[dates['year'] == year].shape[0]
 index_year = dates[dates['year'] == year].index[0]
 
 for i in range(index_year,index_year+length_year):
-    locals()['track_' + str(i+1)] = pd.read_csv('/work/FAC/FGSE/IDYST/tbeucler/default/raw_data/ECMWF/WS_fabien/tc_irad_tracks/tc_irad_' + str(i+1) + '.txt')
+    locals()['track_' + str(i+1)] = pd.read_csv('/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/tc_irad_tracks/tc_irad_' + str(i+1) + '.txt')
     
 
 # %%
@@ -85,7 +104,7 @@ for i in range(index_year,index_year + length_year):
 var_out = []
 var_out
 for j in range (index_year,index_year + length_year):
-    track_temp = pd.read_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/raw_data/ECMWF/WS_fabien/tc_irad_tracks/tc_irad_{j+1}.txt')
+    track_temp = pd.read_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/tc_irad_tracks/tc_irad_{j+1}.txt')
     dew_point_temp = locals()[f"dew_point_xr_{j}"]
     var_out_temp = []
     for i in range(0, len(track_temp)):
@@ -180,12 +199,12 @@ for j in range(index_year,index_year+length_year):
     locals()[f"skweness_out_{j+1}"] = pd.DataFrame(locals()[f"skweness_out_{j+1}"])
     locals()[f"kurto_out_{j+1}"] = pd.DataFrame(locals()[f"kurto_out_{j+1}"])
 
-    locals()[f"mean_out_{j+1}"].to_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/raw_data/ECMWF/WS_fabien/datasets/{folder}/storm_{j+1}/mean_{j+1}.csv')
-    locals()[f"min_out_{j+1}"].to_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/raw_data/ECMWF/WS_fabien/datasets/{folder}/storm_{j+1}/min_{j+1}.csv')
-    locals()[f"max_out_{j+1}"].to_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/raw_data/ECMWF/WS_fabien/datasets/{folder}/storm_{j+1}/max_{j+1}.csv')
-    locals()[f"sigma_out_{j+1}"].to_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/raw_data/ECMWF/WS_fabien/datasets/{folder}/storm_{j+1}/sigma_{j+1}.csv')
-    locals()[f"skweness_out_{j+1}"].to_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/raw_data/ECMWF/WS_fabien/datasets/{folder}/storm_{j+1}/skweness_{j+1}.csv')
-    locals()[f"kurto_out_{j+1}"].to_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/raw_data/ECMWF/WS_fabien/datasets/{folder}/storm_{j+1}/kurto_{j+1}.csv')
+    locals()[f"mean_out_{j+1}"].to_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/datasets/{folder}/storm_{j+1}/mean_{j+1}.csv')
+    locals()[f"min_out_{j+1}"].to_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/datasets/{folder}/storm_{j+1}/min_{j+1}.csv')
+    locals()[f"max_out_{j+1}"].to_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/datasets/{folder}/storm_{j+1}/max_{j+1}.csv')
+    locals()[f"sigma_out_{j+1}"].to_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/datasets/{folder}/storm_{j+1}/sigma_{j+1}.csv')
+    locals()[f"skweness_out_{j+1}"].to_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/datasets/{folder}/storm_{j+1}/skweness_{j+1}.csv')
+    locals()[f"kurto_out_{j+1}"].to_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/datasets/{folder}/storm_{j+1}/kurto_{j+1}.csv')
 
 # %% [markdown]
 # For all variables, (class by variable (folder), then by storm)) 
