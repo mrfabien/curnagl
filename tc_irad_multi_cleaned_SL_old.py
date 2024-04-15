@@ -13,65 +13,56 @@ folder = (str(sys.argv[1]))
 
 year = (str(sys.argv[2]))
 
-year = int(year)
-year_next = year + 1
-
-year = str(year)
-year_next = str(year_next)
-
-month_act = [10 ,11, 12]
-month_next = [1, 2, 3]
-
-#var = 'ERA5_' + str(year) + '_' + folder
+var = 'ERA5_'+year+'_'+folder
 
 # %%
-# new version for combining 6 months from one year to the other
+# specificities for some years where the storms are not in the same file
 
-way = '/work/FAC/FGSE/IDYST/tbeucler/default/raw_data/ECMWF/ERA5/SL/'
+if year == '1991' or year == '1997' or year == '1999' or year == '2006':
+    for i in [10,11,12]:
+        var = 'ERA5_' + year + '-' + str(i) + '_' + folder
+        locals()['dew_point_xr_1'+str(i)] = xr.open_dataset('/work/FAC/FGSE/IDYST/tbeucler/default/raw_data/ECMWF/ERA5/SL/'+folder+'/'+var+'.nc')
 
-if year == '1990' or year == '2021':
-    if year == '1990':
-        month_act = [1, 2, 3]
-        for i in month_act:
-            var = 'ERA5_' + year + '-' + str(i) + '_' + folder
-            locals()['dew_point_xr_' + str(i)] = xr.open_dataset(way+folder+'/'+var+'.nc')
+    dew_point_xr_110 = xr.concat([dew_point_xr_110, dew_point_xr_111, dew_point_xr_112], dim='time')
+    dew_point_xr_to_combined_1 = dew_point_xr_110
+    #dew_point_xr_to_combined_1 = dew_point_xr_11.sel(time=slice(year+'-01-01', year+'-03-31'))
+    #dew_point_xr_to_combined_11 = dew_point_xr_11.sel(time=slice(year+'-10-31', year+'-12-31'))
+    del dew_point_xr_110, dew_point_xr_111, dew_point_xr_112
+    gc.collect()
+    if year == '1991':
+        next_year = '1992'
+    elif year == '1997':
+        next_year = '1998'
+    elif year == '1999':
+        next_year = '2000'
+    else: 
+        next_year = '2007'
+    for i in [1,2,3]:
+        next_var = 'ERA5_' + next_year +'-' + str(i) + '_' + folder
+        locals()['dew_point_xr_2' + str(i)] = xr.open_dataset('/work/FAC/FGSE/IDYST/tbeucler/default/raw_data/ECMWF/ERA5/SL/'+folder+'/'+next_var+'.nc')
 
-        dew_point_xr_1 = xr.concat([dew_point_xr_1, dew_point_xr_2, dew_point_xr_3], dim='time')
-        dew_point_xr_to_combined = dew_point_xr_1
-        del dew_point_xr_1, dew_point_xr_2, dew_point_xr_3
-        gc.collect()
-        dew_point_xr = dew_point_xr_to_combined 
-        del dew_point_xr_to_combined
-
-    elif year == '2021':
-        month_next = [10, 11, 12]
-        for i in month_next:
-            next_var = 'ERA5_' + year +'-' + str(i) + '_' + folder
-            locals()['dew_point_xr_' + str(i)] = xr.open_dataset(way+folder+'/'+next_var+'.nc')
-
-        dew_point_xr_10 = xr.concat([dew_point_xr_10, dew_point_xr_11, dew_point_xr_12], dim='time')
-        dew_point_xr_to_combined = dew_point_xr_10
-        del dew_point_xr_10, dew_point_xr_11, dew_point_xr_12
-        gc.collect()
-        dew_point_xr = dew_point_xr_to_combined 
-        del dew_point_xr_to_combined
-
+    dew_point_xr_21 = xr.concat([dew_point_xr_21, dew_point_xr_22, dew_point_xr_23], dim='time')
+    dew_point_xr_to_combined_2 = dew_point_xr_21
+    #dew_point_xr_to_combined_2 = dew_point_xr_22.sel(time=slice(next_year+'-01-01', next_year+'-03-31'))
+    del dew_point_xr_21, dew_point_xr_22, dew_point_xr_23
+    gc.collect()
+    
+    dew_point_xr_to_combined_1 = xr.concat([dew_point_xr_to_combined_1, dew_point_xr_to_combined_2], dim='time')
+    dew_point_xr = dew_point_xr_to_combined_1
+    del dew_point_xr_to_combined_1, dew_point_xr_to_combined_2
 else:
-    for i in month_act:
-            var = 'ERA5_' + year + '-' + str(i) + '_' + folder
-            locals()['dew_point_xr_' + str(i)] = xr.open_dataset(way+folder+'/'+var+'.nc')
-            
-    for i in month_next:
-        next_var = 'ERA5_' + year_next +'-' + str(i) + '_' + folder
-        locals()['dew_point_xr_' + str(i)] = xr.open_dataset(way+folder+'/'+next_var+'.nc')
+    for i in [1,2,3,10,11,12]:
+        var = 'ERA5_' + year + '-' + str(i) + '_' + folder
+        locals()['dew_point_xr_' + str(i)] = xr.open_dataset('/work/FAC/FGSE/IDYST/tbeucler/default/raw_data/ECMWF/ERA5/SL/'+folder+'/'+var+'.nc')
 
-    dew_point_xr_10 = xr.concat([dew_point_xr_10, dew_point_xr_11, dew_point_xr_12,dew_point_xr_1, dew_point_xr_2, dew_point_xr_3], dim='time')
-    dew_point_xr_to_combined = dew_point_xr_10
+    dew_point_xr_1 = xr.concat([dew_point_xr_1, dew_point_xr_2, dew_point_xr_3, dew_point_xr_10, dew_point_xr_11, dew_point_xr_12], dim='time')
+    dew_point_xr_to_combined = dew_point_xr_1
     del dew_point_xr_1, dew_point_xr_2, dew_point_xr_3, dew_point_xr_10, dew_point_xr_11, dew_point_xr_12
     gc.collect()
     dew_point_xr = dew_point_xr_to_combined 
     del dew_point_xr_to_combined
-
+    #servor_path = '/work/FAC/FGSE/IDYST/tbeucler/default/raw_data/ECMWF/ERA5/SL/'+folder+'/'+var+'.nc'
+    #dew_point_xr = xr.open_dataset(servor_path)
 
 specific_var = list(dew_point_xr.variables)[0]
 
@@ -81,38 +72,17 @@ specific_var = list(dew_point_xr.variables)[0]
 dates = pd.read_csv('/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/storms_start_end.csv', sep=',')
 dates['year'] = dates['start_date'].str[:4]
 
-# Convert 'start_date' and 'end_date' columns to datetime objects
-dates['start_date'] = pd.to_datetime(dates['start_date'])
-dates['end_date'] = pd.to_datetime(dates['end_date'])
+length_year = dates[dates['year'] == year].shape[0]
+index_year = dates[dates['year'] == year].index[0]
 
-# Find the index of the first storm that begins on or after October
-index_start_october = None
-for index, row in dates.iterrows():
-    if row['start_date'].month >= 10 and row['start_date'].year == int(year):
-        index_start_october = index
-        break
-
-# Find the index of the last storm that ends on or before March
-index_end_march = None
-for index, row in dates.iterrows():
-    if row['end_date'].month <= 3 and row['end_date'].year == int(year_next):
-        index_end_march = index
-
-# Count the number of storms occurring between October and March within the specified timeframe
-#num_storms_october_to_march = index_end_march - index_start_october + 1
-
-'''print("Index of the first storm that begins on or after October within the specified timeframe:", index_start_october)
-print("Index of the last storm that ends on or before March within the specified timeframe:", index_end_march)
-print("Number of storms occurring between October and March within the specified timeframe:", num_storms_october_to_march)'''
-
-
-for i in range(index_start_october,index_end_march):
-    locals()['track_' + str(i+1)] = pd.read_csv('tc_irad_tracks/tc_irad_' + str(i+1) + '.txt')   
+for i in range(index_year,index_year+length_year):
+    locals()['track_' + str(i+1)] = pd.read_csv('/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/tc_irad_tracks/tc_irad_' + str(i+1) + '.txt')
+    
 
 # %%
 # slice the time dimension
 
-for i in range(index_start_october,index_end_march+1):
+for i in range(index_year,index_year + length_year):
     start_temp = dates['start_date'][i]
     end_temp = dates['end_date'][i]
 
@@ -133,7 +103,7 @@ for i in range(index_start_october,index_end_march+1):
 
 var_out = []
 var_out
-for j in range (index_start_october,index_end_march+1):
+for j in range (index_year,index_year + length_year):
     track_temp = pd.read_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/tc_irad_tracks/tc_irad_{j+1}.txt')
     dew_point_temp = locals()[f"dew_point_xr_{j}"]
     var_out_temp = []
@@ -172,6 +142,7 @@ for j in range (index_start_october,index_end_march+1):
 
     locals()[f"var_out_{j+1}"] = var_out_temp
 
+
 # %%
 # mean, min, max value of each time step
 
@@ -184,7 +155,7 @@ kurto_out = []
 
 stats_list = []
 all_stats = []
-for j in range(index_start_october,index_end_march+1):
+for j in range(index_year, index_year + length_year):
 
     var_out = locals()[f"var_out_{j+1}"]
     mean_out_temp = []
@@ -219,7 +190,7 @@ for j in range(index_start_october,index_end_march+1):
 # %%
 # save as csv
 
-for j in range(index_start_october,index_end_march+1):
+for j in range(index_year,index_year+length_year):
 
     locals()[f"mean_out_{j+1}"] = pd.DataFrame(locals()[f"mean_out_{j+1}"])
     locals()[f"min_out_{j+1}"] = pd.DataFrame(locals()[f"min_out_{j+1}"])
