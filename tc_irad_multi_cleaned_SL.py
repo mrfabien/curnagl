@@ -13,6 +13,9 @@ folder = (str(sys.argv[1]))
 
 year = (str(sys.argv[2]))
 
+print(folder)
+print(year)
+
 year = int(year)
 year_next = year + 1
 
@@ -107,7 +110,7 @@ print("Number of storms occurring between October and March within the specified
 
 
 for i in range(index_start_october,index_end_march):
-    locals()['track_' + str(i+1)] = pd.read_csv('tc_irad_tracks/tc_irad_' + str(i+1) + '.txt')   
+    locals()['track_' + str(i+1)] = pd.read_csv('/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/tc_irad_tracks/tc_irad_' + str(i+1) + '.txt')   
 
 # %%
 # slice the time dimension
