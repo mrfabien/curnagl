@@ -1,5 +1,5 @@
-ArrayTaskID  Nom_dossier  Annee
-0  10m_u_component_of_wind  1990
-1  10m_u_component_of_wind  1991
-2  10m_u_component_of_wind  1992
-3  10m_u_component_of_wind  1993
+ArrayTaskID,nom_var,annee
+1,10m_u_component_of_wind,1990
+2,10m_u_component_of_wind,1991
+3,10m_u_component_of_wind,1992
+4,10m_u_component_of_wind,1993

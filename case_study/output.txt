@@ -1,0 +1,1 @@
+This is array task , the variable name is  and the year is .

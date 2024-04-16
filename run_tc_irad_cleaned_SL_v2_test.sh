@@ -27,10 +27,15 @@ config=/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/config_test.tx
 #echo "${SLURM_ARRAY_TASK_ID}"
 
 # Extract the Nom_dossier for the current $SLURM_ARRAY_TASK_ID
-Nom_dossier=$(awk -v ArrayTaskID=$SLURM_ARRAY_TASK_ID '$1==ArrayTaskID {print $2}' $config)
+nom_var=$(awk -v ArrayTaskID=$SLURM_ARRAY_TASK_ID '$1==ArrayTaskID {print $2}' $config)
 
 # Extract the Annee for the current $SLURM_ARRAY_TASK_ID
-Annee=$(awk -v ArrayTaskID=$SLURM_ARRAY_TASK_ID '$1==ArrayTaskID {print $3}' $config)
+annee=$(awk -v ArrayTaskID=$SLURM_ARRAY_TASK_ID '$1==ArrayTaskID {print $3}' $config)
+
+echo "Variable name: $nom_var, Year: $annee"
 
 # Execute the python script
-python3 /work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/tc_irad_multi_cleaned_SL.py "$Nom_dossier" "$Annee"
+python3 /work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/tc_irad_multi_cleaned_SL.py "$nom_var" "$annee"
+
+# Print to a file a message that includes the current $SLURM_ARRAY_TASK_ID, the same variable, and the year of the sample
+echo "This is array task ${SLURM_ARRAY_TASK_ID}, the variable name is ${nom_var} and the year is ${annee}." >> /work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/case_study/output.txt
