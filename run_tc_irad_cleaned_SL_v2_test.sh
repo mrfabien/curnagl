@@ -12,6 +12,7 @@
 #SBATCH --cpus-per-task 1
 #SBATCH --mem 64G
 #SBATCH --time 00:30:00
+#SBATCH --array=1-900
 
 # Set your environment
 module purge
@@ -19,11 +20,8 @@ module load gcc
 source ~/.bashrc
 conda activate kera_lgbm
 
-# Define your array
-#SBATCH --array=1-10  # Change this to match the number of folders you have and the desired stride
-
 # Specify the path to the config file
-config=/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/config_test.txt
+config=/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/config.txt
 echo "SLURM_ARRAY_TASK_ID is :${SLURM_ARRAY_TASK_ID}" >> /work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/case_study/output_test.txt
 
 # Extract the nom_var for the current $SLURM_ARRAY_TASK_ID
@@ -34,11 +32,11 @@ annee=$(awk -v ArrayTaskID=${SLURM_ARRAY_TASK_ID} '$1==ArrayTaskID {print $3}' $
 
 # see if the nom_var and annee are correctly extracted 
 
-echo "var is :"$nom_var >> /work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/case_study/output_test.txt
-echo "annee is :"$annee >> /work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/case_study/output_test.txt
+# echo "var is :"$nom_var >> /work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/case_study/output_test.txt
+# echo "annee is :"$annee >> /work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/case_study/output_test.txt
 
 # Execute the python script
 python3 /work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/tc_irad_multi_cleaned_SL.py "$nom_var" "$annee"
 
 # Print to a file a message that includes the current $SLURM_ARRAY_TASK_ID, the same variable, and the year of the sample
-echo "This is array task ${taskid}, the variable name is ${nom_var} and the year is ${annee}." >> /work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/case_study/output.txt
+echo "This is array task ${SLURM_ARRAY_TASK_ID}, the variable name is ${nom_var} and the year is ${annee}." >> /work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/case_study/output.txt
