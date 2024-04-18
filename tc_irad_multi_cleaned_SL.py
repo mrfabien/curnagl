@@ -137,7 +137,7 @@ for i in range(index_start_october,index_end_march+1):
 var_out = []
 var_out
 for j in range (index_start_october,index_end_march+1):
-    track_temp = pd.read_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/tc_irad_tracks/tc_irad_{j+1}.txt')
+    track_temp = pd.read_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/tc_irad_tracks/tc_1_hour/tc_irad_{j+1}_interp.txt')
     dew_point_temp = locals()[f"dew_point_xr_{j}"]
     var_out_temp = []
     for i in range(0, len(track_temp)):
@@ -235,8 +235,8 @@ for j in range(index_start_october,index_end_march+1):
     locals()[f"min_out_{j+1}"].to_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/datasets/{folder}/storm_{j+1}/min_{j+1}.csv')
     locals()[f"max_out_{j+1}"].to_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/datasets/{folder}/storm_{j+1}/max_{j+1}.csv')
     locals()[f"sigma_out_{j+1}"].to_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/datasets/{folder}/storm_{j+1}/sigma_{j+1}.csv')
-    locals()[f"skweness_out_{j+1}"].to_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/datasets/{folder}/storm_{j+1}/skweness_{j+1}.csv')
-    locals()[f"kurto_out_{j+1}"].to_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/datasets/{folder}/storm_{j+1}/kurto_{j+1}.csv')
+    #locals()[f"skweness_out_{j+1}"].to_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/datasets/{folder}/storm_{j+1}/skweness_{j+1}.csv')
+    #locals()[f"kurto_out_{j+1}"].to_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/datasets/{folder}/storm_{j+1}/kurto_{j+1}.csv')
 
 # %% [markdown]
 # For all variables, (class by variable (folder), then by storm)) 
