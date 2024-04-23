@@ -86,7 +86,7 @@ print("Number of storms occurring between October and March within the specified
 
 
 for i in range(index_start_october,index_end_march):
-    locals()['track_' + str(i+1)] = pd.read_csv('/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/tc_irad_tracks/tc_irad_1_hour/tc_irad_' + str(i+1) + '_interp.txt')   
+    locals()['track_' + str(i+1)] = pd.read_csv('/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/tc_irad_tracks/tc_1_hour/tc_irad_' + str(i+1) + '_interp.txt')   
 
 # %%
 # slice the time dimension
