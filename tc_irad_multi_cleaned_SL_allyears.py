@@ -35,27 +35,27 @@ way = '/work/FAC/FGSE/IDYST/tbeucler/default/raw_data/ECMWF/ERA5/SL/'
 
 if year == '1990' or year == '2021':
     if year == '1990':
-        month_act = [1, 2, 3]
+        month_act = [1, 2, 3, 10, 11, 12]
         for i in month_act:
             var = 'ERA5_' + year + '-' + str(i) + '_' + folder
             locals()['dew_point_xr_' + str(i)] = xr.open_dataset(way+folder+'/'+var+'.nc')
 
-        dew_point_xr_1 = xr.concat([dew_point_xr_1, dew_point_xr_2, dew_point_xr_3], dim='time')
+        dew_point_xr_1 = xr.concat([dew_point_xr_1, dew_point_xr_2, dew_point_xr_3, dew_point_xr_10, dew_point_xr_11, dew_point_xr_12], dim='time')
         dew_point_xr_to_combined = dew_point_xr_1
-        del dew_point_xr_1, dew_point_xr_2, dew_point_xr_3
+        del dew_point_xr_1, dew_point_xr_2, dew_point_xr_3, dew_point_xr_10, dew_point_xr_11, dew_point_xr_12
         gc.collect()
         dew_point_xr = dew_point_xr_to_combined 
         del dew_point_xr_to_combined
 
     elif year == '2021':
-        month_next = [10, 11, 12]
+        month_next = [1, 2, 3, 10, 11, 12]
         for i in month_next:
             next_var = 'ERA5_' + year +'-' + str(i) + '_' + folder
             locals()['dew_point_xr_' + str(i)] = xr.open_dataset(way+folder+'/'+next_var+'.nc')
 
-        dew_point_xr_10 = xr.concat([dew_point_xr_10, dew_point_xr_11, dew_point_xr_12], dim='time')
+        dew_point_xr_10 = xr.concat([dew_point_xr_1, dew_point_xr_2, dew_point_xr_3, dew_point_xr_10, dew_point_xr_11, dew_point_xr_12], dim='time')
         dew_point_xr_to_combined = dew_point_xr_10
-        del dew_point_xr_10, dew_point_xr_11, dew_point_xr_12
+        del dew_point_xr_1, dew_point_xr_2, dew_point_xr_3, dew_point_xr_10, dew_point_xr_11, dew_point_xr_12
         gc.collect()
         dew_point_xr = dew_point_xr_to_combined 
         del dew_point_xr_to_combined
@@ -78,6 +78,9 @@ else:
 
 
 specific_var = list(dew_point_xr.variables)[0]
+
+if specific_var == 'longitude':
+    specific_var = list(dew_point_xr.variables)[3]
 
 # %%
 # import all tracks
