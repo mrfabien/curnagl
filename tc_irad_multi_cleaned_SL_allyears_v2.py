@@ -36,9 +36,12 @@ def process_data(variable, year):
     way = '/work/FAC/FGSE/IDYST/tbeucler/default/raw_data/ECMWF/ERA5/SL/'
 
     # Open and concatenate datasets
-    if year in [1990, 2021]:
-        months = month_act + month_next if year == 1990 else month_next + month_act
-        dataset = open_and_concatenate(str(year), variable, months, way)
+    if year == 1990:
+        dataset_act = open_and_concatenate(str(year), variable, month_next, way)
+        dataset_next = open_and_concatenate(str(year_next), variable, month_next, way)
+        dataset = xr.concat([dataset_act, dataset_next], dim='time')
+    elif year == 2021:
+        dataset = open_and_concatenate(str(year), variable, month_next, way)
     else:
         dataset_act = open_and_concatenate(str(year), variable, month_act, way)
         dataset_next = open_and_concatenate(str(year_next), variable, month_next, way)
@@ -52,8 +55,12 @@ def process_data(variable, year):
     dates['year'] = dates['start_date'].dt.year
 
     # Find the indices for storms within the specified timeframe
-    index_start_october = dates[(dates['start_date'].dt.month >= 10) & (dates['year'] == year)].index[0]
-    index_end_march = dates[(dates['end_date'].dt.month <= 3) & (dates['year'] == year_next)].index[-1]
+    if year == 1990:
+        index_start_october = dates[(dates['start_date'].dt.month <= 3) & (dates['start_date'].dt.year == year)].index[0]
+        index_end_march = dates[(dates['end_date'].dt.month <= 3) & (dates['end_date'].dt.year == year_next)].index[0]
+    else:
+        index_start_october = dates[(dates['start_date'].dt.month >= 10) & (dates['start_date'].dt.year == year)].index[0]
+        index_end_march = dates[(dates['end_date'].dt.month <= 3) & (dates['end_date'].dt.year == year_next)].index[0]
 
     # Process each storm
     for i in range(index_start_october, index_end_march + 1):
