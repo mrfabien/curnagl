@@ -1,0 +1,85 @@
+import xarray as xr
+import numpy as np
+import pandas as pd
+import sys
+from datetime import datetime
+
+# Define a function to open datasets and concatenate them
+def open_and_concatenate(year, variable, months, way):
+    datasets = [xr.open_dataset(f'{way}{variable}/ERA5_{year}-{month}_{variable}.nc') for month in months]
+    return xr.concat(datasets, dim='time')
+
+# Define a function to calculate statistics
+def calculate_statistics(data_array):
+    return {
+        'mean': np.mean(data_array),
+        'min': np.min(data_array),
+        'max': np.max(data_array),
+        'std': np.std(data_array),
+        #'skew': pd.Series(data_array.reshape(-1)).skew(),
+        #'kurtosis': pd.Series(data_array.reshape(-1)).kurtosis()
+    }
+
+# Function to log processing details
+def log_processing(variable, year):
+    timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    log_message = f'Processed variable: {variable}, Year: {year}, Timestamp: {timestamp}'
+    with open(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/datasets/{variable}/processing_log.txt', 'a') as log_file:
+        log_file.write(log_message + '\n')
+
+# Main function to process data
+def process_data(variable, year):
+    year = int(year)
+    year_next = year + 1
+    month_act = [10, 11, 12]
+    month_next = [1, 2, 3]
+    way = '/work/FAC/FGSE/IDYST/tbeucler/default/raw_data/ECMWF/ERA5/SL/'
+
+    # Open and concatenate datasets
+    if year in [1990, 2021]:
+        months = month_act + month_next if year == 1990 else month_next + month_act
+        dataset = open_and_concatenate(str(year), variable, months, way)
+    else:
+        dataset_act = open_and_concatenate(str(year), variable, month_act, way)
+        dataset_next = open_and_concatenate(str(year_next), variable, month_next, way)
+        dataset = xr.concat([dataset_act, dataset_next], dim='time')
+
+    # Determine the specific variable to extract
+    specific_var = next(var for var in dataset.variables if var not in ['longitude', 'latitude', 'time'])
+
+    # Import all tracks and convert dates
+    dates = pd.read_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/storms_start_end.csv', parse_dates=['start_date', 'end_date'])
+    dates['year'] = dates['start_date'].dt.year
+
+    # Find the indices for storms within the specified timeframe
+    index_start_october = dates[(dates['start_date'].dt.month >= 10) & (dates['year'] == year)].index[0]
+    index_end_march = dates[(dates['end_date'].dt.month <= 3) & (dates['year'] == year_next)].index[-1]
+
+    # Process each storm
+    for i in range(index_start_october, index_end_march + 1):
+        track = pd.read_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/tc_irad_tracks/tc_1_hour/tc_irad_{i+1}_interp.txt')
+        start_date = dates.at[i, 'start_date']
+        end_date = dates.at[i, 'end_date']
+        storm_data = dataset[specific_var].sel(time=slice(start_date, end_date))
+
+        # Initialize lists to store statistics
+        stats = {'mean': [], 'min': [], 'max': [], 'std': [], 'skew': [], 'kurtosis': []}
+
+        # Calculate statistics for each time step
+        for time_step in storm_data.time:
+            data_slice = storm_data.sel(time=time_step).values
+            step_stats = calculate_statistics(data_slice)
+            for key in stats:
+                stats[key].append(step_stats[key])
+
+        # Save statistics to CSV files
+        for key in stats:
+            pd.DataFrame(stats[key]).to_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/datasets/{variable}/storm_{i+1}/{key}_{i+1}.csv')
+
+    # Log the processing details
+    log_processing(variable, year)
+
+if __name__ == '__main__':
+    variable = sys.argv[1]
+    year = sys.argv[2]
+    process_data(variable, year)
