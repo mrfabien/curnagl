@@ -261,3 +261,10 @@ This is array task 390, the variable name is k_index and the year is 1996.
 This is array task 391, the variable name is k_index and the year is 1997.
 This is array task 412, the variable name is k_index and the year is 2018.
 This is array task 410, the variable name is k_index and the year is 2016.
+This is array task 405, the variable name is k_index and the year is 2011.
+This is array task 387, the variable name is k_index and the year is 1993.
+This is array task 407, the variable name is k_index and the year is 2013.
+This is array task 400, the variable name is k_index and the year is 2006.
+This is array task 388, the variable name is k_index and the year is 1994.
+This is array task 373, the variable name is instantaneous_10m_wind_gust and the year is 2011.
+This is array task 450, the variable name is large_scale_precipitation and the year is 1992.
