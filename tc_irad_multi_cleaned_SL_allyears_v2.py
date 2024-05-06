@@ -21,10 +21,10 @@ def calculate_statistics(data_array):
     }
 
 # Function to log processing details
-def log_processing(variable, year):
+def log_processing(variable, year, storm_number):
     timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    log_message = f'Processed variable: {variable}, Year: {year}, Timestamp: {timestamp}'
-    with open(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/datasets/{variable}/processing_log.txt', 'a') as log_file:
+    log_message = f'Processed variable: {variable}, Year: {year}, Timestamp: {timestamp}, Storm number:{storm_number}'
+    with open(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/datasets/processing_log.txt', 'a') as log_file:
         log_file.write(log_message + '\n')
 
 # Main function to process data
@@ -33,7 +33,10 @@ def process_data(variable, year):
     year_next = year + 1
     month_act = [10, 11, 12]
     month_next = [1, 2, 3]
-    way = '/work/FAC/FGSE/IDYST/tbeucler/default/raw_data/ECMWF/ERA5/SL/'
+    if variable == 'geopential':
+        way = '/work/FAC/FGSE/IDYST/tbeucler/default/raw_data/ECMWF/ERA5/PL/'
+    else:
+        way = '/work/FAC/FGSE/IDYST/tbeucler/default/raw_data/ECMWF/ERA5/SL/'
 
     # Open and concatenate datasets
     if year == 1990:
@@ -70,7 +73,8 @@ def process_data(variable, year):
         storm_data = dataset[specific_var].sel(time=slice(start_date, end_date))
 
         # Initialize lists to store statistics
-        stats = {'mean': [], 'min': [], 'max': [], 'std': [], 'skew': [], 'kurtosis': []}
+        stats = {'mean': [], 'min': [], 'max': [], 'std': []}
+        #, 'skewness': [], 'kurtosis': []
 
         # Calculate statistics for each time step
         for time_step in storm_data.time:
@@ -84,7 +88,7 @@ def process_data(variable, year):
             pd.DataFrame(stats[key]).to_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/datasets/{variable}/storm_{i+1}/{key}_{i+1}.csv')
 
     # Log the processing details
-    log_processing(variable, year)
+    log_processing(variable, year, i)
 
 if __name__ == '__main__':
     variable = sys.argv[1]
