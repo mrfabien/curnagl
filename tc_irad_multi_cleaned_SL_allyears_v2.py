@@ -5,9 +5,14 @@ import sys
 from datetime import datetime
 
 # Define a function to open datasets and concatenate them
-def open_and_concatenate(year, variable, months, way):
-    datasets = [xr.open_dataset(f'{way}{variable}/ERA5_{year}-{month}_{variable}.nc') for month in months]
-    return xr.concat(datasets, dim='time')
+def open_and_concatenate(year, variable, months, way, level=None):
+    if variable == 'geopotential':
+        datasets = [xr.open_dataset(f'{way}{variable}/ERA5_{year}-{month}_{variable}.nc') for month in months]
+        datasets = [dataset.sel(level=level) for dataset in datasets]
+        return xr.concat(datasets, dim='time')
+    else:
+        datasets = [xr.open_dataset(f'{way}{variable}/ERA5_{year}-{month}_{variable}.nc') for month in months]
+        return xr.concat(datasets, dim='time')
 
 # Define a function to calculate statistics
 def calculate_statistics(data_array):
@@ -39,19 +44,32 @@ def process_data(variable, year):
         way = '/work/FAC/FGSE/IDYST/tbeucler/default/raw_data/ECMWF/ERA5/SL/'
 
     # Open and concatenate datasets
-    if year == 1990:
-        dataset_act = open_and_concatenate(str(year), variable, month_next, way)
-        dataset_next = open_and_concatenate(str(year_next), variable, month_next, way)
-        dataset = xr.concat([dataset_act, dataset_next], dim='time')
-    elif year == 2021:
-        dataset = open_and_concatenate(str(year), variable, month_next, way)
+    if variable == 'geopotential':
+        level = 500
+        if year == 1990:
+            dataset_act = open_and_concatenate(str(year), variable, month_next, way, level)
+            dataset_next = open_and_concatenate(str(year_next), variable, month_next, way, level)
+            dataset = xr.concat([dataset_act, dataset_next], dim='time')
+        elif year == 2021:
+            dataset = open_and_concatenate(str(year), variable, month_next, way, level)
+        else:
+            dataset_act = open_and_concatenate(str(year), variable, month_act, way, level)
+            dataset_next = open_and_concatenate(str(year_next), variable, month_next, way, level)
+            dataset = xr.concat([dataset_act, dataset_next], dim='time')
     else:
-        dataset_act = open_and_concatenate(str(year), variable, month_act, way)
-        dataset_next = open_and_concatenate(str(year_next), variable, month_next, way)
-        dataset = xr.concat([dataset_act, dataset_next], dim='time')
+        if year == 1990:
+            dataset_act = open_and_concatenate(str(year), variable, month_next, way)
+            dataset_next = open_and_concatenate(str(year_next), variable, month_next, way)
+            dataset = xr.concat([dataset_act, dataset_next], dim='time')
+        elif year == 2021:
+            dataset = open_and_concatenate(str(year), variable, month_next, way)
+        else:
+            dataset_act = open_and_concatenate(str(year), variable, month_act, way)
+            dataset_next = open_and_concatenate(str(year_next), variable, month_next, way)
+            dataset = xr.concat([dataset_act, dataset_next], dim='time')
 
     # Determine the specific variable to extract
-    specific_var = next(var for var in dataset.variables if var not in ['longitude', 'latitude', 'time'])
+    specific_var = next(var for var in dataset.variables if var not in ['longitude', 'latitude', 'time','level'])
 
     # Import all tracks and convert dates
     dates = pd.read_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/storms_start_end.csv', parse_dates=['start_date', 'end_date'])
