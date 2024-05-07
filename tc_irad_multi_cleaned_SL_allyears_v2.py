@@ -61,6 +61,9 @@ def process_data(variable, year):
     if year == 1990:
         index_start_october = dates[(dates['start_date'].dt.month <= 3) & (dates['start_date'].dt.year == year)].index[0]
         index_end_march = dates[(dates['end_date'].dt.month <= 3) & (dates['end_date'].dt.year == year_next)].index[0]
+    elif year == 2021:
+        index_start_october = dates[(dates['start_date'].dt.month <= 3) & (dates['start_date'].dt.year == year)].index[0]
+        index_end_march = dates[(dates['end_date'].dt.year == 2021)].index[0]
     else:
         index_start_october = dates[(dates['start_date'].dt.month >= 10) & (dates['start_date'].dt.year == year)].index[0]
         index_end_march = dates[(dates['end_date'].dt.month <= 3) & (dates['end_date'].dt.year == year_next)].index[0]
