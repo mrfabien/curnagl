@@ -1,9 +1,9 @@
 #!/bin/bash
 
-#SBATCH --mail-type END
+#SBATCH --mail-type FAIL
 #SBATCH --mail-user fabien.augsburger@unil.ch
 #SBATCH --chdir /work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/case_study
-#SBATCH --job-name stats_v4_all
+#SBATCH --job-name stats_v5_tot_geop_missing
 #SBATCH --output /work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/case_study/log/con/con-%A_%a.out
 #SBATCH --error /work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/case_study/log/error/err-%A_%a.err
 #SBATCH --partition cpu
