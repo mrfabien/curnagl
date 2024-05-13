@@ -1,841 +1,871 @@
-ArrayTaskID Nom_dossier Année
-1 10m_u_component_of_wind 1990
-2 10m_u_component_of_wind 1991
-3 10m_u_component_of_wind 1992
-4 10m_u_component_of_wind 1993
-5 10m_u_component_of_wind 1994
-6 10m_u_component_of_wind 1995
-7 10m_u_component_of_wind 1996
-8 10m_u_component_of_wind 1997
-9 10m_u_component_of_wind 1998
-10 10m_u_component_of_wind 1999
-11 10m_u_component_of_wind 2000
-12 10m_u_component_of_wind 2001
-13 10m_u_component_of_wind 2002
-14 10m_u_component_of_wind 2004
-15 10m_u_component_of_wind 2005
-16 10m_u_component_of_wind 2006
-17 10m_u_component_of_wind 2007
-18 10m_u_component_of_wind 2008
-19 10m_u_component_of_wind 2009
-20 10m_u_component_of_wind 2010
-21 10m_u_component_of_wind 2011
-22 10m_u_component_of_wind 2012
-23 10m_u_component_of_wind 2013
-24 10m_u_component_of_wind 2014
-25 10m_u_component_of_wind 2015
-26 10m_u_component_of_wind 2016
-27 10m_u_component_of_wind 2017
-28 10m_u_component_of_wind 2019
-29 10m_u_component_of_wind 2020
-30 10m_u_component_of_wind 2021
-31 10m_v_component_of_wind 1990
-32 10m_v_component_of_wind 1991
-33 10m_v_component_of_wind 1992
-34 10m_v_component_of_wind 1993
-35 10m_v_component_of_wind 1994
-36 10m_v_component_of_wind 1995
-37 10m_v_component_of_wind 1996
-38 10m_v_component_of_wind 1997
-39 10m_v_component_of_wind 1998
-40 10m_v_component_of_wind 1999
-41 10m_v_component_of_wind 2000
-42 10m_v_component_of_wind 2001
-43 10m_v_component_of_wind 2002
-44 10m_v_component_of_wind 2004
-45 10m_v_component_of_wind 2005
-46 10m_v_component_of_wind 2006
-47 10m_v_component_of_wind 2007
-48 10m_v_component_of_wind 2008
-49 10m_v_component_of_wind 2009
-50 10m_v_component_of_wind 2010
-51 10m_v_component_of_wind 2011
-52 10m_v_component_of_wind 2012
-53 10m_v_component_of_wind 2013
-54 10m_v_component_of_wind 2014
-55 10m_v_component_of_wind 2015
-56 10m_v_component_of_wind 2016
-57 10m_v_component_of_wind 2017
-58 10m_v_component_of_wind 2019
-59 10m_v_component_of_wind 2020
-60 10m_v_component_of_wind 2021
-61 2m_dewpoint_temperature 1990
-62 2m_dewpoint_temperature 1991
-63 2m_dewpoint_temperature 1992
-64 2m_dewpoint_temperature 1993
-65 2m_dewpoint_temperature 1994
-66 2m_dewpoint_temperature 1995
-67 2m_dewpoint_temperature 1996
-68 2m_dewpoint_temperature 1997
-69 2m_dewpoint_temperature 1998
-70 2m_dewpoint_temperature 1999
-71 2m_dewpoint_temperature 2000
-72 2m_dewpoint_temperature 2001
-73 2m_dewpoint_temperature 2002
-74 2m_dewpoint_temperature 2004
-75 2m_dewpoint_temperature 2005
-76 2m_dewpoint_temperature 2006
-77 2m_dewpoint_temperature 2007
-78 2m_dewpoint_temperature 2008
-79 2m_dewpoint_temperature 2009
-80 2m_dewpoint_temperature 2010
-81 2m_dewpoint_temperature 2011
-82 2m_dewpoint_temperature 2012
-83 2m_dewpoint_temperature 2013
-84 2m_dewpoint_temperature 2014
-85 2m_dewpoint_temperature 2015
-86 2m_dewpoint_temperature 2016
-87 2m_dewpoint_temperature 2017
-88 2m_dewpoint_temperature 2019
-89 2m_dewpoint_temperature 2020
-90 2m_dewpoint_temperature 2021
-91 2m_temperature 1990
-92 2m_temperature 1991
-93 2m_temperature 1992
-94 2m_temperature 1993
-95 2m_temperature 1994
-96 2m_temperature 1995
-97 2m_temperature 1996
-98 2m_temperature 1997
-99 2m_temperature 1998
-100 2m_temperature 1999
-101 2m_temperature 2000
-102 2m_temperature 2001
-103 2m_temperature 2002
-104 2m_temperature 2004
-105 2m_temperature 2005
-106 2m_temperature 2006
-107 2m_temperature 2007
-108 2m_temperature 2008
-109 2m_temperature 2009
-110 2m_temperature 2010
-111 2m_temperature 2011
-112 2m_temperature 2012
-113 2m_temperature 2013
-114 2m_temperature 2014
-115 2m_temperature 2015
-116 2m_temperature 2016
-117 2m_temperature 2017
-118 2m_temperature 2019
-119 2m_temperature 2020
-120 2m_temperature 2021
-121 cloud_base_height 1990
-122 cloud_base_height 1991
-123 cloud_base_height 1992
-124 cloud_base_height 1993
-125 cloud_base_height 1994
-126 cloud_base_height 1995
-127 cloud_base_height 1996
-128 cloud_base_height 1997
-129 cloud_base_height 1998
-130 cloud_base_height 1999
-131 cloud_base_height 2000
-132 cloud_base_height 2001
-133 cloud_base_height 2002
-134 cloud_base_height 2004
-135 cloud_base_height 2005
-136 cloud_base_height 2006
-137 cloud_base_height 2007
-138 cloud_base_height 2008
-139 cloud_base_height 2009
-140 cloud_base_height 2010
-141 cloud_base_height 2011
-142 cloud_base_height 2012
-143 cloud_base_height 2013
-144 cloud_base_height 2014
-145 cloud_base_height 2015
-146 cloud_base_height 2016
-147 cloud_base_height 2017
-148 cloud_base_height 2019
-149 cloud_base_height 2020
-150 cloud_base_height 2021
-151 convective_available_potential_energy 1990
-152 convective_available_potential_energy 1991
-153 convective_available_potential_energy 1992
-154 convective_available_potential_energy 1993
-155 convective_available_potential_energy 1994
-156 convective_available_potential_energy 1995
-157 convective_available_potential_energy 1996
-158 convective_available_potential_energy 1997
-159 convective_available_potential_energy 1998
-160 convective_available_potential_energy 1999
-161 convective_available_potential_energy 2000
-162 convective_available_potential_energy 2001
-163 convective_available_potential_energy 2002
-164 convective_available_potential_energy 2004
-165 convective_available_potential_energy 2005
-166 convective_available_potential_energy 2006
-167 convective_available_potential_energy 2007
-168 convective_available_potential_energy 2008
-169 convective_available_potential_energy 2009
-170 convective_available_potential_energy 2010
-171 convective_available_potential_energy 2011
-172 convective_available_potential_energy 2012
-173 convective_available_potential_energy 2013
-174 convective_available_potential_energy 2014
-175 convective_available_potential_energy 2015
-176 convective_available_potential_energy 2016
-177 convective_available_potential_energy 2017
-178 convective_available_potential_energy 2019
-179 convective_available_potential_energy 2020
-180 convective_available_potential_energy 2021
-181 convective_inhibition 1990
-182 convective_inhibition 1991
-183 convective_inhibition 1992
-184 convective_inhibition 1993
-185 convective_inhibition 1994
-186 convective_inhibition 1995
-187 convective_inhibition 1996
-188 convective_inhibition 1997
-189 convective_inhibition 1998
-190 convective_inhibition 1999
-191 convective_inhibition 2000
-192 convective_inhibition 2001
-193 convective_inhibition 2002
-194 convective_inhibition 2004
-195 convective_inhibition 2005
-196 convective_inhibition 2006
-197 convective_inhibition 2007
-198 convective_inhibition 2008
-199 convective_inhibition 2009
-200 convective_inhibition 2010
-201 convective_inhibition 2011
-202 convective_inhibition 2012
-203 convective_inhibition 2013
-204 convective_inhibition 2014
-205 convective_inhibition 2015
-206 convective_inhibition 2016
-207 convective_inhibition 2017
-208 convective_inhibition 2019
-209 convective_inhibition 2020
-210 convective_inhibition 2021
-211 convective_precipitation 1990
-212 convective_precipitation 1991
-213 convective_precipitation 1992
-214 convective_precipitation 1993
-215 convective_precipitation 1994
-216 convective_precipitation 1995
-217 convective_precipitation 1996
-218 convective_precipitation 1997
-219 convective_precipitation 1998
-220 convective_precipitation 1999
-221 convective_precipitation 2000
-222 convective_precipitation 2001
-223 convective_precipitation 2002
-224 convective_precipitation 2004
-225 convective_precipitation 2005
-226 convective_precipitation 2006
-227 convective_precipitation 2007
-228 convective_precipitation 2008
-229 convective_precipitation 2009
-230 convective_precipitation 2010
-231 convective_precipitation 2011
-232 convective_precipitation 2012
-233 convective_precipitation 2013
-234 convective_precipitation 2014
-235 convective_precipitation 2015
-236 convective_precipitation 2016
-237 convective_precipitation 2017
-238 convective_precipitation 2019
-239 convective_precipitation 2020
-240 convective_precipitation 2021
-241 convective_rain_rate 1990
-242 convective_rain_rate 1991
-243 convective_rain_rate 1992
-244 convective_rain_rate 1993
-245 convective_rain_rate 1994
-246 convective_rain_rate 1995
-247 convective_rain_rate 1996
-248 convective_rain_rate 1997
-249 convective_rain_rate 1998
-250 convective_rain_rate 1999
-251 convective_rain_rate 2000
-252 convective_rain_rate 2001
-253 convective_rain_rate 2002
-254 convective_rain_rate 2004
-255 convective_rain_rate 2005
-256 convective_rain_rate 2006
-257 convective_rain_rate 2007
-258 convective_rain_rate 2008
-259 convective_rain_rate 2009
-260 convective_rain_rate 2010
-261 convective_rain_rate 2011
-262 convective_rain_rate 2012
-263 convective_rain_rate 2013
-264 convective_rain_rate 2014
-265 convective_rain_rate 2015
-266 convective_rain_rate 2016
-267 convective_rain_rate 2017
-268 convective_rain_rate 2019
-269 convective_rain_rate 2020
-270 convective_rain_rate 2021
-271 convective_snowfall 1990
-272 convective_snowfall 1991
-273 convective_snowfall 1992
-274 convective_snowfall 1993
-275 convective_snowfall 1994
-276 convective_snowfall 1995
-277 convective_snowfall 1996
-278 convective_snowfall 1997
-279 convective_snowfall 1998
-280 convective_snowfall 1999
-281 convective_snowfall 2000
-282 convective_snowfall 2001
-283 convective_snowfall 2002
-284 convective_snowfall 2004
-285 convective_snowfall 2005
-286 convective_snowfall 2006
-287 convective_snowfall 2007
-288 convective_snowfall 2008
-289 convective_snowfall 2009
-290 convective_snowfall 2010
-291 convective_snowfall 2011
-292 convective_snowfall 2012
-293 convective_snowfall 2013
-294 convective_snowfall 2014
-295 convective_snowfall 2015
-296 convective_snowfall 2016
-297 convective_snowfall 2017
-298 convective_snowfall 2019
-299 convective_snowfall 2020
-300 convective_snowfall 2021
-301 geopotential 1990
-302 geopotential 1991
-303 geopotential 1992
-304 geopotential 1993
-305 geopotential 1994
-306 geopotential 1995
-307 geopotential 1996
-308 geopotential 1997
-309 geopotential 1998
-310 geopotential 1999
-311 geopotential 2000
-312 geopotential 2001
-313 geopotential 2002
-314 geopotential 2004
-315 geopotential 2005
-316 geopotential 2006
-317 geopotential 2007
-318 geopotential 2008
-319 geopotential 2009
-320 geopotential 2010
-321 geopotential 2011
-322 geopotential 2012
-323 geopotential 2013
-324 geopotential 2014
-325 geopotential 2015
-326 geopotential 2016
-327 geopotential 2017
-328 geopotential 2019
-329 geopotential 2020
-330 geopotential 2021
-331 high_cloud_cover 1990
-332 high_cloud_cover 1991
-333 high_cloud_cover 1992
-334 high_cloud_cover 1993
-335 high_cloud_cover 1994
-336 high_cloud_cover 1995
-337 high_cloud_cover 1996
-338 high_cloud_cover 1997
-339 high_cloud_cover 1998
-340 high_cloud_cover 1999
-341 high_cloud_cover 2000
-342 high_cloud_cover 2001
-343 high_cloud_cover 2002
-344 high_cloud_cover 2004
-345 high_cloud_cover 2005
-346 high_cloud_cover 2006
-347 high_cloud_cover 2007
-348 high_cloud_cover 2008
-349 high_cloud_cover 2009
-350 high_cloud_cover 2010
-351 high_cloud_cover 2011
-352 high_cloud_cover 2012
-353 high_cloud_cover 2013
-354 high_cloud_cover 2014
-355 high_cloud_cover 2015
-356 high_cloud_cover 2016
-357 high_cloud_cover 2017
-358 high_cloud_cover 2019
-359 high_cloud_cover 2020
-360 high_cloud_cover 2021
-361 instantaneous_10m_wind_gust 1990
-362 instantaneous_10m_wind_gust 1991
-363 instantaneous_10m_wind_gust 1992
-364 instantaneous_10m_wind_gust 1993
-365 instantaneous_10m_wind_gust 1994
-366 instantaneous_10m_wind_gust 1995
-367 instantaneous_10m_wind_gust 1996
-368 instantaneous_10m_wind_gust 1997
-369 instantaneous_10m_wind_gust 1998
-370 instantaneous_10m_wind_gust 1999
-371 instantaneous_10m_wind_gust 2000
-372 instantaneous_10m_wind_gust 2001
-373 instantaneous_10m_wind_gust 2002
-374 instantaneous_10m_wind_gust 2004
-375 instantaneous_10m_wind_gust 2005
-376 instantaneous_10m_wind_gust 2006
-377 instantaneous_10m_wind_gust 2007
-378 instantaneous_10m_wind_gust 2008
-379 instantaneous_10m_wind_gust 2009
-380 instantaneous_10m_wind_gust 2010
-381 instantaneous_10m_wind_gust 2011
-382 instantaneous_10m_wind_gust 2012
-383 instantaneous_10m_wind_gust 2013
-384 instantaneous_10m_wind_gust 2014
-385 instantaneous_10m_wind_gust 2015
-386 instantaneous_10m_wind_gust 2016
-387 instantaneous_10m_wind_gust 2017
-388 instantaneous_10m_wind_gust 2019
-389 instantaneous_10m_wind_gust 2020
-390 instantaneous_10m_wind_gust 2021
-391 k_index 1990
-392 k_index 1991
-393 k_index 1992
-394 k_index 1993
-395 k_index 1994
-396 k_index 1995
-397 k_index 1996
-398 k_index 1997
-399 k_index 1998
-400 k_index 1999
-401 k_index 2000
-402 k_index 2001
-403 k_index 2002
-404 k_index 2004
-405 k_index 2005
-406 k_index 2006
-407 k_index 2007
-408 k_index 2008
-409 k_index 2009
-410 k_index 2010
-411 k_index 2011
-412 k_index 2012
-413 k_index 2013
-414 k_index 2014
-415 k_index 2015
-416 k_index 2016
-417 k_index 2017
-418 k_index 2019
-419 k_index 2020
-420 k_index 2021
-421 large_scale_precipitation 1990
-422 large_scale_precipitation 1991
-423 large_scale_precipitation 1992
-424 large_scale_precipitation 1993
-425 large_scale_precipitation 1994
-426 large_scale_precipitation 1995
-427 large_scale_precipitation 1996
-428 large_scale_precipitation 1997
-429 large_scale_precipitation 1998
-430 large_scale_precipitation 1999
-431 large_scale_precipitation 2000
-432 large_scale_precipitation 2001
-433 large_scale_precipitation 2002
-434 large_scale_precipitation 2004
-435 large_scale_precipitation 2005
-436 large_scale_precipitation 2006
-437 large_scale_precipitation 2007
-438 large_scale_precipitation 2008
-439 large_scale_precipitation 2009
-440 large_scale_precipitation 2010
-441 large_scale_precipitation 2011
-442 large_scale_precipitation 2012
-443 large_scale_precipitation 2013
-444 large_scale_precipitation 2014
-445 large_scale_precipitation 2015
-446 large_scale_precipitation 2016
-447 large_scale_precipitation 2017
-448 large_scale_precipitation 2019
-449 large_scale_precipitation 2020
-450 large_scale_precipitation 2021
-451 large_scale_snowfall 1990
-452 large_scale_snowfall 1991
-453 large_scale_snowfall 1992
-454 large_scale_snowfall 1993
-455 large_scale_snowfall 1994
-456 large_scale_snowfall 1995
-457 large_scale_snowfall 1996
-458 large_scale_snowfall 1997
-459 large_scale_snowfall 1998
-460 large_scale_snowfall 1999
-461 large_scale_snowfall 2000
-462 large_scale_snowfall 2001
-463 large_scale_snowfall 2002
-464 large_scale_snowfall 2004
-465 large_scale_snowfall 2005
-466 large_scale_snowfall 2006
-467 large_scale_snowfall 2007
-468 large_scale_snowfall 2008
-469 large_scale_snowfall 2009
-470 large_scale_snowfall 2010
-471 large_scale_snowfall 2011
-472 large_scale_snowfall 2012
-473 large_scale_snowfall 2013
-474 large_scale_snowfall 2014
-475 large_scale_snowfall 2015
-476 large_scale_snowfall 2016
-477 large_scale_snowfall 2017
-478 large_scale_snowfall 2019
-479 large_scale_snowfall 2020
-480 large_scale_snowfall 2021
-481 mean_large_scale_precipitation_rate 1990
-482 mean_large_scale_precipitation_rate 1991
-483 mean_large_scale_precipitation_rate 1992
-484 mean_large_scale_precipitation_rate 1993
-485 mean_large_scale_precipitation_rate 1994
-486 mean_large_scale_precipitation_rate 1995
-487 mean_large_scale_precipitation_rate 1996
-488 mean_large_scale_precipitation_rate 1997
-489 mean_large_scale_precipitation_rate 1998
-490 mean_large_scale_precipitation_rate 1999
-491 mean_large_scale_precipitation_rate 2000
-492 mean_large_scale_precipitation_rate 2001
-493 mean_large_scale_precipitation_rate 2002
-494 mean_large_scale_precipitation_rate 2004
-495 mean_large_scale_precipitation_rate 2005
-496 mean_large_scale_precipitation_rate 2006
-497 mean_large_scale_precipitation_rate 2007
-498 mean_large_scale_precipitation_rate 2008
-499 mean_large_scale_precipitation_rate 2009
-500 mean_large_scale_precipitation_rate 2010
-501 mean_large_scale_precipitation_rate 2011
-502 mean_large_scale_precipitation_rate 2012
-503 mean_large_scale_precipitation_rate 2013
-504 mean_large_scale_precipitation_rate 2014
-505 mean_large_scale_precipitation_rate 2015
-506 mean_large_scale_precipitation_rate 2016
-507 mean_large_scale_precipitation_rate 2017
-508 mean_large_scale_precipitation_rate 2019
-509 mean_large_scale_precipitation_rate 2020
-510 mean_large_scale_precipitation_rate 2021
-511 mean_top_net_long_wave_radiation_flux 1990
-512 mean_top_net_long_wave_radiation_flux 1991
-513 mean_top_net_long_wave_radiation_flux 1992
-514 mean_top_net_long_wave_radiation_flux 1993
-515 mean_top_net_long_wave_radiation_flux 1994
-516 mean_top_net_long_wave_radiation_flux 1995
-517 mean_top_net_long_wave_radiation_flux 1996
-518 mean_top_net_long_wave_radiation_flux 1997
-519 mean_top_net_long_wave_radiation_flux 1998
-520 mean_top_net_long_wave_radiation_flux 1999
-521 mean_top_net_long_wave_radiation_flux 2000
-522 mean_top_net_long_wave_radiation_flux 2001
-523 mean_top_net_long_wave_radiation_flux 2002
-524 mean_top_net_long_wave_radiation_flux 2004
-525 mean_top_net_long_wave_radiation_flux 2005
-526 mean_top_net_long_wave_radiation_flux 2006
-527 mean_top_net_long_wave_radiation_flux 2007
-528 mean_top_net_long_wave_radiation_flux 2008
-529 mean_top_net_long_wave_radiation_flux 2009
-530 mean_top_net_long_wave_radiation_flux 2010
-531 mean_top_net_long_wave_radiation_flux 2011
-532 mean_top_net_long_wave_radiation_flux 2012
-533 mean_top_net_long_wave_radiation_flux 2013
-534 mean_top_net_long_wave_radiation_flux 2014
-535 mean_top_net_long_wave_radiation_flux 2015
-536 mean_top_net_long_wave_radiation_flux 2016
-537 mean_top_net_long_wave_radiation_flux 2017
-538 mean_top_net_long_wave_radiation_flux 2019
-539 mean_top_net_long_wave_radiation_flux 2020
-540 mean_top_net_long_wave_radiation_flux 2021
-541 mean_top_net_short_wave_radiation_flux 1990
-542 mean_top_net_short_wave_radiation_flux 1991
-543 mean_top_net_short_wave_radiation_flux 1992
-544 mean_top_net_short_wave_radiation_flux 1993
-545 mean_top_net_short_wave_radiation_flux 1994
-546 mean_top_net_short_wave_radiation_flux 1995
-547 mean_top_net_short_wave_radiation_flux 1996
-548 mean_top_net_short_wave_radiation_flux 1997
-549 mean_top_net_short_wave_radiation_flux 1998
-550 mean_top_net_short_wave_radiation_flux 1999
-551 mean_top_net_short_wave_radiation_flux 2000
-552 mean_top_net_short_wave_radiation_flux 2001
-553 mean_top_net_short_wave_radiation_flux 2002
-554 mean_top_net_short_wave_radiation_flux 2004
-555 mean_top_net_short_wave_radiation_flux 2005
-556 mean_top_net_short_wave_radiation_flux 2006
-557 mean_top_net_short_wave_radiation_flux 2007
-558 mean_top_net_short_wave_radiation_flux 2008
-559 mean_top_net_short_wave_radiation_flux 2009
-560 mean_top_net_short_wave_radiation_flux 2010
-561 mean_top_net_short_wave_radiation_flux 2011
-562 mean_top_net_short_wave_radiation_flux 2012
-563 mean_top_net_short_wave_radiation_flux 2013
-564 mean_top_net_short_wave_radiation_flux 2014
-565 mean_top_net_short_wave_radiation_flux 2015
-566 mean_top_net_short_wave_radiation_flux 2016
-567 mean_top_net_short_wave_radiation_flux 2017
-568 mean_top_net_short_wave_radiation_flux 2019
-569 mean_top_net_short_wave_radiation_flux 2020
-570 mean_top_net_short_wave_radiation_flux 2021
-571 mean_total_precipitation_rate 1990
-572 mean_total_precipitation_rate 1991
-573 mean_total_precipitation_rate 1992
-574 mean_total_precipitation_rate 1993
-575 mean_total_precipitation_rate 1994
-576 mean_total_precipitation_rate 1995
-577 mean_total_precipitation_rate 1996
-578 mean_total_precipitation_rate 1997
-579 mean_total_precipitation_rate 1998
-580 mean_total_precipitation_rate 1999
-581 mean_total_precipitation_rate 2000
-582 mean_total_precipitation_rate 2001
-583 mean_total_precipitation_rate 2002
-584 mean_total_precipitation_rate 2004
-585 mean_total_precipitation_rate 2005
-586 mean_total_precipitation_rate 2006
-587 mean_total_precipitation_rate 2007
-588 mean_total_precipitation_rate 2008
-589 mean_total_precipitation_rate 2009
-590 mean_total_precipitation_rate 2010
-591 mean_total_precipitation_rate 2011
-592 mean_total_precipitation_rate 2012
-593 mean_total_precipitation_rate 2013
-594 mean_total_precipitation_rate 2014
-595 mean_total_precipitation_rate 2015
-596 mean_total_precipitation_rate 2016
-597 mean_total_precipitation_rate 2017
-598 mean_total_precipitation_rate 2019
-599 mean_total_precipitation_rate 2020
-600 mean_total_precipitation_rate 2021
-601 mean_sea_level_pressure 1990
-602 mean_sea_level_pressure 1991
-603 mean_sea_level_pressure 1992
-604 mean_sea_level_pressure 1993
-605 mean_sea_level_pressure 1994
-606 mean_sea_level_pressure 1995
-607 mean_sea_level_pressure 1996
-608 mean_sea_level_pressure 1997
-609 mean_sea_level_pressure 1998
-610 mean_sea_level_pressure 1999
-611 mean_sea_level_pressure 2000
-612 mean_sea_level_pressure 2001
-613 mean_sea_level_pressure 2002
-614 mean_sea_level_pressure 2004
-615 mean_sea_level_pressure 2005
-616 mean_sea_level_pressure 2006
-617 mean_sea_level_pressure 2007
-618 mean_sea_level_pressure 2008
-619 mean_sea_level_pressure 2009
-620 mean_sea_level_pressure 2010
-621 mean_sea_level_pressure 2011
-622 mean_sea_level_pressure 2012
-623 mean_sea_level_pressure 2013
-624 mean_sea_level_pressure 2014
-625 mean_sea_level_pressure 2015
-626 mean_sea_level_pressure 2016
-627 mean_sea_level_pressure 2017
-628 mean_sea_level_pressure 2019
-629 mean_sea_level_pressure 2020
-630 mean_sea_level_pressure 2021
-631 mean_surface_latent_heat_flux 1990
-632 mean_surface_latent_heat_flux 1991
-633 mean_surface_latent_heat_flux 1992
-634 mean_surface_latent_heat_flux 1993
-635 mean_surface_latent_heat_flux 1994
-636 mean_surface_latent_heat_flux 1995
-637 mean_surface_latent_heat_flux 1996
-638 mean_surface_latent_heat_flux 1997
-639 mean_surface_latent_heat_flux 1998
-640 mean_surface_latent_heat_flux 1999
-641 mean_surface_latent_heat_flux 2000
-642 mean_surface_latent_heat_flux 2001
-643 mean_surface_latent_heat_flux 2002
-644 mean_surface_latent_heat_flux 2004
-645 mean_surface_latent_heat_flux 2005
-646 mean_surface_latent_heat_flux 2006
-647 mean_surface_latent_heat_flux 2007
-648 mean_surface_latent_heat_flux 2008
-649 mean_surface_latent_heat_flux 2009
-650 mean_surface_latent_heat_flux 2010
-651 mean_surface_latent_heat_flux 2011
-652 mean_surface_latent_heat_flux 2012
-653 mean_surface_latent_heat_flux 2013
-654 mean_surface_latent_heat_flux 2014
-655 mean_surface_latent_heat_flux 2015
-656 mean_surface_latent_heat_flux 2016
-657 mean_surface_latent_heat_flux 2017
-658 mean_surface_latent_heat_flux 2019
-659 mean_surface_latent_heat_flux 2020
-660 mean_surface_latent_heat_flux 2021
-661 mean_surface_net_long_wave_radiation_flux 1990
-662 mean_surface_net_long_wave_radiation_flux 1991
-663 mean_surface_net_long_wave_radiation_flux 1992
-664 mean_surface_net_long_wave_radiation_flux 1993
-665 mean_surface_net_long_wave_radiation_flux 1994
-666 mean_surface_net_long_wave_radiation_flux 1995
-667 mean_surface_net_long_wave_radiation_flux 1996
-668 mean_surface_net_long_wave_radiation_flux 1997
-669 mean_surface_net_long_wave_radiation_flux 1998
-670 mean_surface_net_long_wave_radiation_flux 1999
-671 mean_surface_net_long_wave_radiation_flux 2000
-672 mean_surface_net_long_wave_radiation_flux 2001
-673 mean_surface_net_long_wave_radiation_flux 2002
-674 mean_surface_net_long_wave_radiation_flux 2004
-675 mean_surface_net_long_wave_radiation_flux 2005
-676 mean_surface_net_long_wave_radiation_flux 2006
-677 mean_surface_net_long_wave_radiation_flux 2007
-678 mean_surface_net_long_wave_radiation_flux 2008
-679 mean_surface_net_long_wave_radiation_flux 2009
-680 mean_surface_net_long_wave_radiation_flux 2010
-681 mean_surface_net_long_wave_radiation_flux 2011
-682 mean_surface_net_long_wave_radiation_flux 2012
-683 mean_surface_net_long_wave_radiation_flux 2013
-684 mean_surface_net_long_wave_radiation_flux 2014
-685 mean_surface_net_long_wave_radiation_flux 2015
-686 mean_surface_net_long_wave_radiation_flux 2016
-687 mean_surface_net_long_wave_radiation_flux 2017
-688 mean_surface_net_long_wave_radiation_flux 2019
-689 mean_surface_net_long_wave_radiation_flux 2020
-690 mean_surface_net_long_wave_radiation_flux 2021
-691 mean_surface_net_short_wave_radiation_flux 1990
-692 mean_surface_net_short_wave_radiation_flux 1991
-693 mean_surface_net_short_wave_radiation_flux 1992
-694 mean_surface_net_short_wave_radiation_flux 1993
-695 mean_surface_net_short_wave_radiation_flux 1994
-696 mean_surface_net_short_wave_radiation_flux 1995
-697 mean_surface_net_short_wave_radiation_flux 1996
-698 mean_surface_net_short_wave_radiation_flux 1997
-699 mean_surface_net_short_wave_radiation_flux 1998
-700 mean_surface_net_short_wave_radiation_flux 1999
-701 mean_surface_net_short_wave_radiation_flux 2000
-702 mean_surface_net_short_wave_radiation_flux 2001
-703 mean_surface_net_short_wave_radiation_flux 2002
-704 mean_surface_net_short_wave_radiation_flux 2004
-705 mean_surface_net_short_wave_radiation_flux 2005
-706 mean_surface_net_short_wave_radiation_flux 2006
-707 mean_surface_net_short_wave_radiation_flux 2007
-708 mean_surface_net_short_wave_radiation_flux 2008
-709 mean_surface_net_short_wave_radiation_flux 2009
-710 mean_surface_net_short_wave_radiation_flux 2010
-711 mean_surface_net_short_wave_radiation_flux 2011
-712 mean_surface_net_short_wave_radiation_flux 2012
-713 mean_surface_net_short_wave_radiation_flux 2013
-714 mean_surface_net_short_wave_radiation_flux 2014
-715 mean_surface_net_short_wave_radiation_flux 2015
-716 mean_surface_net_short_wave_radiation_flux 2016
-717 mean_surface_net_short_wave_radiation_flux 2017
-718 mean_surface_net_short_wave_radiation_flux 2019
-719 mean_surface_net_short_wave_radiation_flux 2020
-720 mean_surface_net_short_wave_radiation_flux 2021
-721 mean_vertically_integrated_moisture_divergence 1990
-722 mean_vertically_integrated_moisture_divergence 1991
-723 mean_vertically_integrated_moisture_divergence 1992
-724 mean_vertically_integrated_moisture_divergence 1993
-725 mean_vertically_integrated_moisture_divergence 1994
-726 mean_vertically_integrated_moisture_divergence 1995
-727 mean_vertically_integrated_moisture_divergence 1996
-728 mean_vertically_integrated_moisture_divergence 1997
-729 mean_vertically_integrated_moisture_divergence 1998
-730 mean_vertically_integrated_moisture_divergence 1999
-731 mean_vertically_integrated_moisture_divergence 2000
-732 mean_vertically_integrated_moisture_divergence 2001
-733 mean_vertically_integrated_moisture_divergence 2002
-734 mean_vertically_integrated_moisture_divergence 2004
-735 mean_vertically_integrated_moisture_divergence 2005
-736 mean_vertically_integrated_moisture_divergence 2006
-737 mean_vertically_integrated_moisture_divergence 2007
-738 mean_vertically_integrated_moisture_divergence 2008
-739 mean_vertically_integrated_moisture_divergence 2009
-740 mean_vertically_integrated_moisture_divergence 2010
-741 mean_vertically_integrated_moisture_divergence 2011
-742 mean_vertically_integrated_moisture_divergence 2012
-743 mean_vertically_integrated_moisture_divergence 2013
-744 mean_vertically_integrated_moisture_divergence 2014
-745 mean_vertically_integrated_moisture_divergence 2015
-746 mean_vertically_integrated_moisture_divergence 2016
-747 mean_vertically_integrated_moisture_divergence 2017
-748 mean_vertically_integrated_moisture_divergence 2019
-749 mean_vertically_integrated_moisture_divergence 2020
-750 mean_vertically_integrated_moisture_divergence 2021
-751 surface_pressure 1990
-752 surface_pressure 1991
-753 surface_pressure 1992
-754 surface_pressure 1993
-755 surface_pressure 1994
-756 surface_pressure 1995
-757 surface_pressure 1996
-758 surface_pressure 1997
-759 surface_pressure 1998
-760 surface_pressure 1999
-761 surface_pressure 2000
-762 surface_pressure 2001
-763 surface_pressure 2002
-764 surface_pressure 2004
-765 surface_pressure 2005
-766 surface_pressure 2006
-767 surface_pressure 2007
-768 surface_pressure 2008
-769 surface_pressure 2009
-770 surface_pressure 2010
-771 surface_pressure 2011
-772 surface_pressure 2012
-773 surface_pressure 2013
-774 surface_pressure 2014
-775 surface_pressure 2015
-776 surface_pressure 2016
-777 surface_pressure 2017
-778 surface_pressure 2019
-779 surface_pressure 2020
-780 surface_pressure 2021
-781 total_precipitation 1990
-782 total_precipitation 1991
-783 total_precipitation 1992
-784 total_precipitation 1993
-785 total_precipitation 1994
-786 total_precipitation 1995
-787 total_precipitation 1996
-788 total_precipitation 1997
-789 total_precipitation 1998
-790 total_precipitation 1999
-791 total_precipitation 2000
-792 total_precipitation 2001
-793 total_precipitation 2002
-794 total_precipitation 2004
-795 total_precipitation 2005
-796 total_precipitation 2006
-797 total_precipitation 2007
-798 total_precipitation 2008
-799 total_precipitation 2009
-800 total_precipitation 2010
-801 total_precipitation 2011
-802 total_precipitation 2012
-803 total_precipitation 2013
-804 total_precipitation 2014
-805 total_precipitation 2015
-806 total_precipitation 2016
-807 total_precipitation 2017
-808 total_precipitation 2019
-809 total_precipitation 2020
-810 total_precipitation 2021
-811 total_totals_index 1990
-812 total_totals_index 1991
-813 total_totals_index 1992
-814 total_totals_index 1993
-815 total_totals_index 1994
-816 total_totals_index 1995
-817 total_totals_index 1996
-818 total_totals_index 1997
-819 total_totals_index 1998
-820 total_totals_index 1999
-821 total_totals_index 2000
-822 total_totals_index 2001
-823 total_totals_index 2002
-824 total_totals_index 2004
-825 total_totals_index 2005
-826 total_totals_index 2006
-827 total_totals_index 2007
-828 total_totals_index 2008
-829 total_totals_index 2009
-830 total_totals_index 2010
-831 total_totals_index 2011
-832 total_totals_index 2012
-833 total_totals_index 2013
-834 total_totals_index 2014
-835 total_totals_index 2015
-836 total_totals_index 2016
-837 total_totals_index 2017
-838 total_totals_index 2019
-839 total_totals_index 2020
-840 total_totals_index 2021
+ArrayTaskID Nom_dossier Année Level
+1 10m_u_component_of_wind 1990 0
+2 10m_u_component_of_wind 1991 0
+3 10m_u_component_of_wind 1992 0
+4 10m_u_component_of_wind 1993 0
+5 10m_u_component_of_wind 1994 0
+6 10m_u_component_of_wind 1995 0
+7 10m_u_component_of_wind 1996 0
+8 10m_u_component_of_wind 1997 0
+9 10m_u_component_of_wind 1998 0
+10 10m_u_component_of_wind 1999 0
+11 10m_u_component_of_wind 2000 0
+12 10m_u_component_of_wind 2001 0
+13 10m_u_component_of_wind 2002 0
+14 10m_u_component_of_wind 2004 0
+15 10m_u_component_of_wind 2005 0
+16 10m_u_component_of_wind 2006 0
+17 10m_u_component_of_wind 2007 0
+18 10m_u_component_of_wind 2008 0
+19 10m_u_component_of_wind 2009 0
+20 10m_u_component_of_wind 2010 0
+21 10m_u_component_of_wind 2011 0
+22 10m_u_component_of_wind 2012 0
+23 10m_u_component_of_wind 2013 0
+24 10m_u_component_of_wind 2014 0
+25 10m_u_component_of_wind 2015 0
+26 10m_u_component_of_wind 2016 0
+27 10m_u_component_of_wind 2017 0
+28 10m_u_component_of_wind 2019 0
+29 10m_u_component_of_wind 2020 0
+30 10m_u_component_of_wind 2021 0
+31 10m_v_component_of_wind 1990 0
+32 10m_v_component_of_wind 1991 0
+33 10m_v_component_of_wind 1992 0
+34 10m_v_component_of_wind 1993 0
+35 10m_v_component_of_wind 1994 0
+36 10m_v_component_of_wind 1995 0
+37 10m_v_component_of_wind 1996 0
+38 10m_v_component_of_wind 1997 0
+39 10m_v_component_of_wind 1998 0
+40 10m_v_component_of_wind 1999 0
+41 10m_v_component_of_wind 2000 0
+42 10m_v_component_of_wind 2001 0
+43 10m_v_component_of_wind 2002 0
+44 10m_v_component_of_wind 2004 0
+45 10m_v_component_of_wind 2005 0
+46 10m_v_component_of_wind 2006 0
+47 10m_v_component_of_wind 2007 0
+48 10m_v_component_of_wind 2008 0
+49 10m_v_component_of_wind 2009 0
+50 10m_v_component_of_wind 2010 0
+51 10m_v_component_of_wind 2011 0
+52 10m_v_component_of_wind 2012 0
+53 10m_v_component_of_wind 2013 0
+54 10m_v_component_of_wind 2014 0
+55 10m_v_component_of_wind 2015 0
+56 10m_v_component_of_wind 2016 0
+57 10m_v_component_of_wind 2017 0
+58 10m_v_component_of_wind 2019 0
+59 10m_v_component_of_wind 2020 0
+60 10m_v_component_of_wind 2021 0
+61 2m_dewpoint_temperature 1990 0
+62 2m_dewpoint_temperature 1991 0
+63 2m_dewpoint_temperature 1992 0
+64 2m_dewpoint_temperature 1993 0
+65 2m_dewpoint_temperature 1994 0
+66 2m_dewpoint_temperature 1995 0
+67 2m_dewpoint_temperature 1996 0
+68 2m_dewpoint_temperature 1997 0
+69 2m_dewpoint_temperature 1998 0
+70 2m_dewpoint_temperature 1999 0
+71 2m_dewpoint_temperature 2000 0
+72 2m_dewpoint_temperature 2001 0
+73 2m_dewpoint_temperature 2002 0
+74 2m_dewpoint_temperature 2004 0
+75 2m_dewpoint_temperature 2005 0
+76 2m_dewpoint_temperature 2006 0
+77 2m_dewpoint_temperature 2007 0
+78 2m_dewpoint_temperature 2008 0
+79 2m_dewpoint_temperature 2009 0
+80 2m_dewpoint_temperature 2010 0
+81 2m_dewpoint_temperature 2011 0
+82 2m_dewpoint_temperature 2012 0
+83 2m_dewpoint_temperature 2013 0
+84 2m_dewpoint_temperature 2014 0
+85 2m_dewpoint_temperature 2015 0
+86 2m_dewpoint_temperature 2016 0
+87 2m_dewpoint_temperature 2017 0
+88 2m_dewpoint_temperature 2019 0
+89 2m_dewpoint_temperature 2020 0
+90 2m_dewpoint_temperature 2021 0
+91 2m_temperature 1990 0
+92 2m_temperature 1991 0
+93 2m_temperature 1992 0
+94 2m_temperature 1993 0
+95 2m_temperature 1994 0
+96 2m_temperature 1995 0
+97 2m_temperature 1996 0
+98 2m_temperature 1997 0
+99 2m_temperature 1998 0
+100 2m_temperature 1999 0
+101 2m_temperature 2000 0
+102 2m_temperature 2001 0
+103 2m_temperature 2002 0
+104 2m_temperature 2004 0
+105 2m_temperature 2005 0
+106 2m_temperature 2006 0
+107 2m_temperature 2007 0
+108 2m_temperature 2008 0
+109 2m_temperature 2009 0
+110 2m_temperature 2010 0
+111 2m_temperature 2011 0
+112 2m_temperature 2012 0
+113 2m_temperature 2013 0
+114 2m_temperature 2014 0
+115 2m_temperature 2015 0
+116 2m_temperature 2016 0
+117 2m_temperature 2017 0
+118 2m_temperature 2019 0
+119 2m_temperature 2020 0
+120 2m_temperature 2021 0
+121 cloud_base_height 1990 0
+122 cloud_base_height 1991 0
+123 cloud_base_height 1992 0
+124 cloud_base_height 1993 0
+125 cloud_base_height 1994 0
+126 cloud_base_height 1995 0
+127 cloud_base_height 1996 0
+128 cloud_base_height 1997 0
+129 cloud_base_height 1998 0
+130 cloud_base_height 1999 0
+131 cloud_base_height 2000 0
+132 cloud_base_height 2001 0
+133 cloud_base_height 2002 0
+134 cloud_base_height 2004 0
+135 cloud_base_height 2005 0
+136 cloud_base_height 2006 0
+137 cloud_base_height 2007 0
+138 cloud_base_height 2008 0
+139 cloud_base_height 2009 0
+140 cloud_base_height 2010 0
+141 cloud_base_height 2011 0
+142 cloud_base_height 2012 0
+143 cloud_base_height 2013 0
+144 cloud_base_height 2014 0
+145 cloud_base_height 2015 0
+146 cloud_base_height 2016 0
+147 cloud_base_height 2017 0
+148 cloud_base_height 2019 0
+149 cloud_base_height 2020 0
+150 cloud_base_height 2021 0
+151 convective_available_potential_energy 1990 0
+152 convective_available_potential_energy 1991 0
+153 convective_available_potential_energy 1992 0
+154 convective_available_potential_energy 1993 0
+155 convective_available_potential_energy 1994 0
+156 convective_available_potential_energy 1995 0
+157 convective_available_potential_energy 1996 0
+158 convective_available_potential_energy 1997 0
+159 convective_available_potential_energy 1998 0
+160 convective_available_potential_energy 1999 0
+161 convective_available_potential_energy 2000 0
+162 convective_available_potential_energy 2001 0
+163 convective_available_potential_energy 2002 0
+164 convective_available_potential_energy 2004 0
+165 convective_available_potential_energy 2005 0
+166 convective_available_potential_energy 2006 0
+167 convective_available_potential_energy 2007 0
+168 convective_available_potential_energy 2008 0
+169 convective_available_potential_energy 2009 0
+170 convective_available_potential_energy 2010 0
+171 convective_available_potential_energy 2011 0
+172 convective_available_potential_energy 2012 0
+173 convective_available_potential_energy 2013 0
+174 convective_available_potential_energy 2014 0
+175 convective_available_potential_energy 2015 0
+176 convective_available_potential_energy 2016 0
+177 convective_available_potential_energy 2017 0
+178 convective_available_potential_energy 2019 0
+179 convective_available_potential_energy 2020 0
+180 convective_available_potential_energy 2021 0
+181 convective_inhibition 1990 0
+182 convective_inhibition 1991 0
+183 convective_inhibition 1992 0
+184 convective_inhibition 1993 0
+185 convective_inhibition 1994 0
+186 convective_inhibition 1995 0
+187 convective_inhibition 1996 0
+188 convective_inhibition 1997 0
+189 convective_inhibition 1998 0
+190 convective_inhibition 1999 0
+191 convective_inhibition 2000 0
+192 convective_inhibition 2001 0
+193 convective_inhibition 2002 0
+194 convective_inhibition 2004 0
+195 convective_inhibition 2005 0
+196 convective_inhibition 2006 0
+197 convective_inhibition 2007 0
+198 convective_inhibition 2008 0
+199 convective_inhibition 2009 0
+200 convective_inhibition 2010 0
+201 convective_inhibition 2011 0
+202 convective_inhibition 2012 0
+203 convective_inhibition 2013 0
+204 convective_inhibition 2014 0
+205 convective_inhibition 2015 0
+206 convective_inhibition 2016 0
+207 convective_inhibition 2017 0
+208 convective_inhibition 2019 0
+209 convective_inhibition 2020 0
+210 convective_inhibition 2021 0
+211 convective_precipitation 1990 0
+212 convective_precipitation 1991 0
+213 convective_precipitation 1992 0
+214 convective_precipitation 1993 0
+215 convective_precipitation 1994 0
+216 convective_precipitation 1995 0
+217 convective_precipitation 1996 0
+218 convective_precipitation 1997 0
+219 convective_precipitation 1998 0
+220 convective_precipitation 1999 0
+221 convective_precipitation 2000 0
+222 convective_precipitation 2001 0
+223 convective_precipitation 2002 0
+224 convective_precipitation 2004 0
+225 convective_precipitation 2005 0
+226 convective_precipitation 2006 0
+227 convective_precipitation 2007 0
+228 convective_precipitation 2008 0
+229 convective_precipitation 2009 0
+230 convective_precipitation 2010 0
+231 convective_precipitation 2011 0
+232 convective_precipitation 2012 0
+233 convective_precipitation 2013 0
+234 convective_precipitation 2014 0
+235 convective_precipitation 2015 0
+236 convective_precipitation 2016 0
+237 convective_precipitation 2017 0
+238 convective_precipitation 2019 0
+239 convective_precipitation 2020 0
+240 convective_precipitation 2021 0
+241 convective_rain_rate 1990 0
+242 convective_rain_rate 1991 0
+243 convective_rain_rate 1992 0
+244 convective_rain_rate 1993 0
+245 convective_rain_rate 1994 0
+246 convective_rain_rate 1995 0
+247 convective_rain_rate 1996 0
+248 convective_rain_rate 1997 0
+249 convective_rain_rate 1998 0
+250 convective_rain_rate 1999 0
+251 convective_rain_rate 2000 0
+252 convective_rain_rate 2001 0
+253 convective_rain_rate 2002 0
+254 convective_rain_rate 2004 0
+255 convective_rain_rate 2005 0
+256 convective_rain_rate 2006 0
+257 convective_rain_rate 2007 0
+258 convective_rain_rate 2008 0
+259 convective_rain_rate 2009 0
+260 convective_rain_rate 2010 0
+261 convective_rain_rate 2011 0
+262 convective_rain_rate 2012 0
+263 convective_rain_rate 2013 0
+264 convective_rain_rate 2014 0
+265 convective_rain_rate 2015 0
+266 convective_rain_rate 2016 0
+267 convective_rain_rate 2017 0
+268 convective_rain_rate 2019 0
+269 convective_rain_rate 2020 0
+270 convective_rain_rate 2021 0
+271 convective_snowfall 1990 0
+272 convective_snowfall 1991 0
+273 convective_snowfall 1992 0
+274 convective_snowfall 1993 0
+275 convective_snowfall 1994 0
+276 convective_snowfall 1995 0
+277 convective_snowfall 1996 0
+278 convective_snowfall 1997 0
+279 convective_snowfall 1998 0
+280 convective_snowfall 1999 0
+281 convective_snowfall 2000 0
+282 convective_snowfall 2001 0
+283 convective_snowfall 2002 0
+284 convective_snowfall 2004 0
+285 convective_snowfall 2005 0
+286 convective_snowfall 2006 0
+287 convective_snowfall 2007 0
+288 convective_snowfall 2008 0
+289 convective_snowfall 2009 0
+290 convective_snowfall 2010 0
+291 convective_snowfall 2011 0
+292 convective_snowfall 2012 0
+293 convective_snowfall 2013 0
+294 convective_snowfall 2014 0
+295 convective_snowfall 2015 0
+296 convective_snowfall 2016 0
+297 convective_snowfall 2017 0
+298 convective_snowfall 2019 0
+299 convective_snowfall 2020 0
+300 convective_snowfall 2021 0
+301 geopotential 1990 500
+302 geopotential 1991 500
+303 geopotential 1992 500
+304 geopotential 1993 500
+305 geopotential 1994 500
+306 geopotential 1995 500
+307 geopotential 1996 500
+308 geopotential 1997 500
+309 geopotential 1998 500
+310 geopotential 1999 500
+311 geopotential 2000 500
+312 geopotential 2001 500
+313 geopotential 2002 500
+314 geopotential 2004 500
+315 geopotential 2005 500
+316 geopotential 2006 500
+317 geopotential 2007 500
+318 geopotential 2008 500
+319 geopotential 2009 500
+320 geopotential 2010 500
+321 geopotential 2011 500
+322 geopotential 2012 500
+323 geopotential 2013 500
+324 geopotential 2014 500
+325 geopotential 2015 500
+326 geopotential 2016 500
+327 geopotential 2017 500
+328 geopotential 2019 500
+329 geopotential 2020 500
+330 geopotential 2021 500
+331 geopotential 1990 1000
+332 geopotential 1991 1000
+333 geopotential 1992 1000
+334 geopotential 1993 1000
+335 geopotential 1994 1000
+336 geopotential 1995 1000
+337 geopotential 1996 1000
+338 geopotential 1997 1000
+339 geopotential 1998 1000
+340 geopotential 1999 1000
+341 geopotential 2000 1000
+342 geopotential 2001 1000
+343 geopotential 2002 1000
+344 geopotential 2004 1000
+345 geopotential 2005 1000
+346 geopotential 2006 1000
+347 geopotential 2007 1000
+348 geopotential 2008 1000
+349 geopotential 2009 1000
+350 geopotential 2010 1000
+351 geopotential 2011 1000
+352 geopotential 2012 1000
+353 geopotential 2013 1000
+354 geopotential 2014 1000
+355 geopotential 2015 1000
+356 geopotential 2016 1000
+357 geopotential 2017 1000
+358 geopotential 2019 1000
+359 geopotential 2020 1000
+360 geopotential 2021 1000
+361 high_cloud_cover 1990 0
+362 high_cloud_cover 1991 0
+363 high_cloud_cover 1992 0
+364 high_cloud_cover 1993 0
+365 high_cloud_cover 1994 0
+366 high_cloud_cover 1995 0
+367 high_cloud_cover 1996 0
+368 high_cloud_cover 1997 0
+369 high_cloud_cover 1998 0
+370 high_cloud_cover 1999 0
+371 high_cloud_cover 2000 0
+372 high_cloud_cover 2001 0
+373 high_cloud_cover 2002 0
+374 high_cloud_cover 2004 0
+375 high_cloud_cover 2005 0
+376 high_cloud_cover 2006 0
+377 high_cloud_cover 2007 0
+378 high_cloud_cover 2008 0
+379 high_cloud_cover 2009 0
+380 high_cloud_cover 2010 0
+381 high_cloud_cover 2011 0
+382 high_cloud_cover 2012 0
+383 high_cloud_cover 2013 0
+384 high_cloud_cover 2014 0
+385 high_cloud_cover 2015 0
+386 high_cloud_cover 2016 0
+387 high_cloud_cover 2017 0
+388 high_cloud_cover 2019 0
+389 high_cloud_cover 2020 0
+390 high_cloud_cover 2021 0
+391 instantaneous_10m_wind_gust 1990 0
+392 instantaneous_10m_wind_gust 1991 0
+393 instantaneous_10m_wind_gust 1992 0
+394 instantaneous_10m_wind_gust 1993 0
+395 instantaneous_10m_wind_gust 1994 0
+396 instantaneous_10m_wind_gust 1995 0
+397 instantaneous_10m_wind_gust 1996 0
+398 instantaneous_10m_wind_gust 1997 0
+399 instantaneous_10m_wind_gust 1998 0
+400 instantaneous_10m_wind_gust 1999 0
+401 instantaneous_10m_wind_gust 2000 0
+402 instantaneous_10m_wind_gust 2001 0
+403 instantaneous_10m_wind_gust 2002 0
+404 instantaneous_10m_wind_gust 2004 0
+405 instantaneous_10m_wind_gust 2005 0
+406 instantaneous_10m_wind_gust 2006 0
+407 instantaneous_10m_wind_gust 2007 0
+408 instantaneous_10m_wind_gust 2008 0
+409 instantaneous_10m_wind_gust 2009 0
+410 instantaneous_10m_wind_gust 2010 0
+411 instantaneous_10m_wind_gust 2011 0
+412 instantaneous_10m_wind_gust 2012 0
+413 instantaneous_10m_wind_gust 2013 0
+414 instantaneous_10m_wind_gust 2014 0
+415 instantaneous_10m_wind_gust 2015 0
+416 instantaneous_10m_wind_gust 2016 0
+417 instantaneous_10m_wind_gust 2017 0
+418 instantaneous_10m_wind_gust 2019 0
+419 instantaneous_10m_wind_gust 2020 0
+420 instantaneous_10m_wind_gust 2021 0
+421 k_index 1990 0
+422 k_index 1991 0
+423 k_index 1992 0
+424 k_index 1993 0
+425 k_index 1994 0
+426 k_index 1995 0
+427 k_index 1996 0
+428 k_index 1997 0
+429 k_index 1998 0
+430 k_index 1999 0
+431 k_index 2000 0
+432 k_index 2001 0
+433 k_index 2002 0
+434 k_index 2004 0
+435 k_index 2005 0
+436 k_index 2006 0
+437 k_index 2007 0
+438 k_index 2008 0
+439 k_index 2009 0
+440 k_index 2010 0
+441 k_index 2011 0
+442 k_index 2012 0
+443 k_index 2013 0
+444 k_index 2014 0
+445 k_index 2015 0
+446 k_index 2016 0
+447 k_index 2017 0
+448 k_index 2019 0
+449 k_index 2020 0
+450 k_index 2021 0
+451 large_scale_precipitation 1990 0
+452 large_scale_precipitation 1991 0
+453 large_scale_precipitation 1992 0
+454 large_scale_precipitation 1993 0
+455 large_scale_precipitation 1994 0
+456 large_scale_precipitation 1995 0
+457 large_scale_precipitation 1996 0
+458 large_scale_precipitation 1997 0
+459 large_scale_precipitation 1998 0
+460 large_scale_precipitation 1999 0
+461 large_scale_precipitation 2000 0
+462 large_scale_precipitation 2001 0
+463 large_scale_precipitation 2002 0
+464 large_scale_precipitation 2004 0
+465 large_scale_precipitation 2005 0
+466 large_scale_precipitation 2006 0
+467 large_scale_precipitation 2007 0
+468 large_scale_precipitation 2008 0
+469 large_scale_precipitation 2009 0
+470 large_scale_precipitation 2010 0
+471 large_scale_precipitation 2011 0
+472 large_scale_precipitation 2012 0
+473 large_scale_precipitation 2013 0
+474 large_scale_precipitation 2014 0
+475 large_scale_precipitation 2015 0
+476 large_scale_precipitation 2016 0
+477 large_scale_precipitation 2017 0
+478 large_scale_precipitation 2019 0
+479 large_scale_precipitation 2020 0
+480 large_scale_precipitation 2021 0
+481 large_scale_snowfall 1990 0
+482 large_scale_snowfall 1991 0
+483 large_scale_snowfall 1992 0
+484 large_scale_snowfall 1993 0
+485 large_scale_snowfall 1994 0
+486 large_scale_snowfall 1995 0
+487 large_scale_snowfall 1996 0
+488 large_scale_snowfall 1997 0
+489 large_scale_snowfall 1998 0
+490 large_scale_snowfall 1999 0
+491 large_scale_snowfall 2000 0
+492 large_scale_snowfall 2001 0
+493 large_scale_snowfall 2002 0
+494 large_scale_snowfall 2004 0
+495 large_scale_snowfall 2005 0
+496 large_scale_snowfall 2006 0
+497 large_scale_snowfall 2007 0
+498 large_scale_snowfall 2008 0
+499 large_scale_snowfall 2009 0
+500 large_scale_snowfall 2010 0
+501 large_scale_snowfall 2011 0
+502 large_scale_snowfall 2012 0
+503 large_scale_snowfall 2013 0
+504 large_scale_snowfall 2014 0
+505 large_scale_snowfall 2015 0
+506 large_scale_snowfall 2016 0
+507 large_scale_snowfall 2017 0
+508 large_scale_snowfall 2019 0
+509 large_scale_snowfall 2020 0
+510 large_scale_snowfall 2021 0
+511 mean_large_scale_precipitation_rate 1990 0
+512 mean_large_scale_precipitation_rate 1991 0
+513 mean_large_scale_precipitation_rate 1992 0
+514 mean_large_scale_precipitation_rate 1993 0
+515 mean_large_scale_precipitation_rate 1994 0
+516 mean_large_scale_precipitation_rate 1995 0
+517 mean_large_scale_precipitation_rate 1996 0
+518 mean_large_scale_precipitation_rate 1997 0
+519 mean_large_scale_precipitation_rate 1998 0
+520 mean_large_scale_precipitation_rate 1999 0
+521 mean_large_scale_precipitation_rate 2000 0
+522 mean_large_scale_precipitation_rate 2001 0
+523 mean_large_scale_precipitation_rate 2002 0
+524 mean_large_scale_precipitation_rate 2004 0
+525 mean_large_scale_precipitation_rate 2005 0
+526 mean_large_scale_precipitation_rate 2006 0
+527 mean_large_scale_precipitation_rate 2007 0
+528 mean_large_scale_precipitation_rate 2008 0
+529 mean_large_scale_precipitation_rate 2009 0
+530 mean_large_scale_precipitation_rate 2010 0
+531 mean_large_scale_precipitation_rate 2011 0
+532 mean_large_scale_precipitation_rate 2012 0
+533 mean_large_scale_precipitation_rate 2013 0
+534 mean_large_scale_precipitation_rate 2014 0
+535 mean_large_scale_precipitation_rate 2015 0
+536 mean_large_scale_precipitation_rate 2016 0
+537 mean_large_scale_precipitation_rate 2017 0
+538 mean_large_scale_precipitation_rate 2019 0
+539 mean_large_scale_precipitation_rate 2020 0
+540 mean_large_scale_precipitation_rate 2021 0
+541 mean_top_net_long_wave_radiation_flux 1990 0
+542 mean_top_net_long_wave_radiation_flux 1991 0
+543 mean_top_net_long_wave_radiation_flux 1992 0
+544 mean_top_net_long_wave_radiation_flux 1993 0
+545 mean_top_net_long_wave_radiation_flux 1994 0
+546 mean_top_net_long_wave_radiation_flux 1995 0
+547 mean_top_net_long_wave_radiation_flux 1996 0
+548 mean_top_net_long_wave_radiation_flux 1997 0
+549 mean_top_net_long_wave_radiation_flux 1998 0
+550 mean_top_net_long_wave_radiation_flux 1999 0
+551 mean_top_net_long_wave_radiation_flux 2000 0
+552 mean_top_net_long_wave_radiation_flux 2001 0
+553 mean_top_net_long_wave_radiation_flux 2002 0
+554 mean_top_net_long_wave_radiation_flux 2004 0
+555 mean_top_net_long_wave_radiation_flux 2005 0
+556 mean_top_net_long_wave_radiation_flux 2006 0
+557 mean_top_net_long_wave_radiation_flux 2007 0
+558 mean_top_net_long_wave_radiation_flux 2008 0
+559 mean_top_net_long_wave_radiation_flux 2009 0
+560 mean_top_net_long_wave_radiation_flux 2010 0
+561 mean_top_net_long_wave_radiation_flux 2011 0
+562 mean_top_net_long_wave_radiation_flux 2012 0
+563 mean_top_net_long_wave_radiation_flux 2013 0
+564 mean_top_net_long_wave_radiation_flux 2014 0
+565 mean_top_net_long_wave_radiation_flux 2015 0
+566 mean_top_net_long_wave_radiation_flux 2016 0
+567 mean_top_net_long_wave_radiation_flux 2017 0
+568 mean_top_net_long_wave_radiation_flux 2019 0
+569 mean_top_net_long_wave_radiation_flux 2020 0
+570 mean_top_net_long_wave_radiation_flux 2021 0
+571 mean_top_net_short_wave_radiation_flux 1990 0
+572 mean_top_net_short_wave_radiation_flux 1991 0
+573 mean_top_net_short_wave_radiation_flux 1992 0
+574 mean_top_net_short_wave_radiation_flux 1993 0
+575 mean_top_net_short_wave_radiation_flux 1994 0
+576 mean_top_net_short_wave_radiation_flux 1995 0
+577 mean_top_net_short_wave_radiation_flux 1996 0
+578 mean_top_net_short_wave_radiation_flux 1997 0
+579 mean_top_net_short_wave_radiation_flux 1998 0
+580 mean_top_net_short_wave_radiation_flux 1999 0
+581 mean_top_net_short_wave_radiation_flux 2000 0
+582 mean_top_net_short_wave_radiation_flux 2001 0
+583 mean_top_net_short_wave_radiation_flux 2002 0
+584 mean_top_net_short_wave_radiation_flux 2004 0
+585 mean_top_net_short_wave_radiation_flux 2005 0
+586 mean_top_net_short_wave_radiation_flux 2006 0
+587 mean_top_net_short_wave_radiation_flux 2007 0
+588 mean_top_net_short_wave_radiation_flux 2008 0
+589 mean_top_net_short_wave_radiation_flux 2009 0
+590 mean_top_net_short_wave_radiation_flux 2010 0
+591 mean_top_net_short_wave_radiation_flux 2011 0
+592 mean_top_net_short_wave_radiation_flux 2012 0
+593 mean_top_net_short_wave_radiation_flux 2013 0
+594 mean_top_net_short_wave_radiation_flux 2014 0
+595 mean_top_net_short_wave_radiation_flux 2015 0
+596 mean_top_net_short_wave_radiation_flux 2016 0
+597 mean_top_net_short_wave_radiation_flux 2017 0
+598 mean_top_net_short_wave_radiation_flux 2019 0
+599 mean_top_net_short_wave_radiation_flux 2020 0
+600 mean_top_net_short_wave_radiation_flux 2021 0
+601 mean_total_precipitation_rate 1990 0
+602 mean_total_precipitation_rate 1991 0
+603 mean_total_precipitation_rate 1992 0
+604 mean_total_precipitation_rate 1993 0
+605 mean_total_precipitation_rate 1994 0
+606 mean_total_precipitation_rate 1995 0
+607 mean_total_precipitation_rate 1996 0
+608 mean_total_precipitation_rate 1997 0
+609 mean_total_precipitation_rate 1998 0
+610 mean_total_precipitation_rate 1999 0
+611 mean_total_precipitation_rate 2000 0
+612 mean_total_precipitation_rate 2001 0
+613 mean_total_precipitation_rate 2002 0
+614 mean_total_precipitation_rate 2004 0
+615 mean_total_precipitation_rate 2005 0
+616 mean_total_precipitation_rate 2006 0
+617 mean_total_precipitation_rate 2007 0
+618 mean_total_precipitation_rate 2008 0
+619 mean_total_precipitation_rate 2009 0
+620 mean_total_precipitation_rate 2010 0
+621 mean_total_precipitation_rate 2011 0
+622 mean_total_precipitation_rate 2012 0
+623 mean_total_precipitation_rate 2013 0
+624 mean_total_precipitation_rate 2014 0
+625 mean_total_precipitation_rate 2015 0
+626 mean_total_precipitation_rate 2016 0
+627 mean_total_precipitation_rate 2017 0
+628 mean_total_precipitation_rate 2019 0
+629 mean_total_precipitation_rate 2020 0
+630 mean_total_precipitation_rate 2021 0
+631 mean_sea_level_pressure 1990 0
+632 mean_sea_level_pressure 1991 0
+633 mean_sea_level_pressure 1992 0
+634 mean_sea_level_pressure 1993 0
+635 mean_sea_level_pressure 1994 0
+636 mean_sea_level_pressure 1995 0
+637 mean_sea_level_pressure 1996 0
+638 mean_sea_level_pressure 1997 0
+639 mean_sea_level_pressure 1998 0
+640 mean_sea_level_pressure 1999 0
+641 mean_sea_level_pressure 2000 0
+642 mean_sea_level_pressure 2001 0
+643 mean_sea_level_pressure 2002 0
+644 mean_sea_level_pressure 2004 0
+645 mean_sea_level_pressure 2005 0
+646 mean_sea_level_pressure 2006 0
+647 mean_sea_level_pressure 2007 0
+648 mean_sea_level_pressure 2008 0
+649 mean_sea_level_pressure 2009 0
+650 mean_sea_level_pressure 2010 0
+651 mean_sea_level_pressure 2011 0
+652 mean_sea_level_pressure 2012 0
+653 mean_sea_level_pressure 2013 0
+654 mean_sea_level_pressure 2014 0
+655 mean_sea_level_pressure 2015 0
+656 mean_sea_level_pressure 2016 0
+657 mean_sea_level_pressure 2017 0
+658 mean_sea_level_pressure 2019 0
+659 mean_sea_level_pressure 2020 0
+660 mean_sea_level_pressure 2021 0
+661 mean_surface_latent_heat_flux 1990 0
+662 mean_surface_latent_heat_flux 1991 0
+663 mean_surface_latent_heat_flux 1992 0
+664 mean_surface_latent_heat_flux 1993 0
+665 mean_surface_latent_heat_flux 1994 0
+666 mean_surface_latent_heat_flux 1995 0
+667 mean_surface_latent_heat_flux 1996 0
+668 mean_surface_latent_heat_flux 1997 0
+669 mean_surface_latent_heat_flux 1998 0
+670 mean_surface_latent_heat_flux 1999 0
+671 mean_surface_latent_heat_flux 2000 0
+672 mean_surface_latent_heat_flux 2001 0
+673 mean_surface_latent_heat_flux 2002 0
+674 mean_surface_latent_heat_flux 2004 0
+675 mean_surface_latent_heat_flux 2005 0
+676 mean_surface_latent_heat_flux 2006 0
+677 mean_surface_latent_heat_flux 2007 0
+678 mean_surface_latent_heat_flux 2008 0
+679 mean_surface_latent_heat_flux 2009 0
+680 mean_surface_latent_heat_flux 2010 0
+681 mean_surface_latent_heat_flux 2011 0
+682 mean_surface_latent_heat_flux 2012 0
+683 mean_surface_latent_heat_flux 2013 0
+684 mean_surface_latent_heat_flux 2014 0
+685 mean_surface_latent_heat_flux 2015 0
+686 mean_surface_latent_heat_flux 2016 0
+687 mean_surface_latent_heat_flux 2017 0
+688 mean_surface_latent_heat_flux 2019 0
+689 mean_surface_latent_heat_flux 2020 0
+690 mean_surface_latent_heat_flux 2021 0
+691 mean_surface_net_long_wave_radiation_flux 1990 0
+692 mean_surface_net_long_wave_radiation_flux 1991 0
+693 mean_surface_net_long_wave_radiation_flux 1992 0
+694 mean_surface_net_long_wave_radiation_flux 1993 0
+695 mean_surface_net_long_wave_radiation_flux 1994 0
+696 mean_surface_net_long_wave_radiation_flux 1995 0
+697 mean_surface_net_long_wave_radiation_flux 1996 0
+698 mean_surface_net_long_wave_radiation_flux 1997 0
+699 mean_surface_net_long_wave_radiation_flux 1998 0
+700 mean_surface_net_long_wave_radiation_flux 1999 0
+701 mean_surface_net_long_wave_radiation_flux 2000 0
+702 mean_surface_net_long_wave_radiation_flux 2001 0
+703 mean_surface_net_long_wave_radiation_flux 2002 0
+704 mean_surface_net_long_wave_radiation_flux 2004 0
+705 mean_surface_net_long_wave_radiation_flux 2005 0
+706 mean_surface_net_long_wave_radiation_flux 2006 0
+707 mean_surface_net_long_wave_radiation_flux 2007 0
+708 mean_surface_net_long_wave_radiation_flux 2008 0
+709 mean_surface_net_long_wave_radiation_flux 2009 0
+710 mean_surface_net_long_wave_radiation_flux 2010 0
+711 mean_surface_net_long_wave_radiation_flux 2011 0
+712 mean_surface_net_long_wave_radiation_flux 2012 0
+713 mean_surface_net_long_wave_radiation_flux 2013 0
+714 mean_surface_net_long_wave_radiation_flux 2014 0
+715 mean_surface_net_long_wave_radiation_flux 2015 0
+716 mean_surface_net_long_wave_radiation_flux 2016 0
+717 mean_surface_net_long_wave_radiation_flux 2017 0
+718 mean_surface_net_long_wave_radiation_flux 2019 0
+719 mean_surface_net_long_wave_radiation_flux 2020 0
+720 mean_surface_net_long_wave_radiation_flux 2021 0
+721 mean_surface_net_short_wave_radiation_flux 1990 0
+722 mean_surface_net_short_wave_radiation_flux 1991 0
+723 mean_surface_net_short_wave_radiation_flux 1992 0
+724 mean_surface_net_short_wave_radiation_flux 1993 0
+725 mean_surface_net_short_wave_radiation_flux 1994 0
+726 mean_surface_net_short_wave_radiation_flux 1995 0
+727 mean_surface_net_short_wave_radiation_flux 1996 0
+728 mean_surface_net_short_wave_radiation_flux 1997 0
+729 mean_surface_net_short_wave_radiation_flux 1998 0
+730 mean_surface_net_short_wave_radiation_flux 1999 0
+731 mean_surface_net_short_wave_radiation_flux 2000 0
+732 mean_surface_net_short_wave_radiation_flux 2001 0
+733 mean_surface_net_short_wave_radiation_flux 2002 0
+734 mean_surface_net_short_wave_radiation_flux 2004 0
+735 mean_surface_net_short_wave_radiation_flux 2005 0
+736 mean_surface_net_short_wave_radiation_flux 2006 0
+737 mean_surface_net_short_wave_radiation_flux 2007 0
+738 mean_surface_net_short_wave_radiation_flux 2008 0
+739 mean_surface_net_short_wave_radiation_flux 2009 0
+740 mean_surface_net_short_wave_radiation_flux 2010 0
+741 mean_surface_net_short_wave_radiation_flux 2011 0
+742 mean_surface_net_short_wave_radiation_flux 2012 0
+743 mean_surface_net_short_wave_radiation_flux 2013 0
+744 mean_surface_net_short_wave_radiation_flux 2014 0
+745 mean_surface_net_short_wave_radiation_flux 2015 0
+746 mean_surface_net_short_wave_radiation_flux 2016 0
+747 mean_surface_net_short_wave_radiation_flux 2017 0
+748 mean_surface_net_short_wave_radiation_flux 2019 0
+749 mean_surface_net_short_wave_radiation_flux 2020 0
+750 mean_surface_net_short_wave_radiation_flux 2021 0
+751 mean_vertically_integrated_moisture_divergence 1990 0
+752 mean_vertically_integrated_moisture_divergence 1991 0
+753 mean_vertically_integrated_moisture_divergence 1992 0
+754 mean_vertically_integrated_moisture_divergence 1993 0
+755 mean_vertically_integrated_moisture_divergence 1994 0
+756 mean_vertically_integrated_moisture_divergence 1995 0
+757 mean_vertically_integrated_moisture_divergence 1996 0
+758 mean_vertically_integrated_moisture_divergence 1997 0
+759 mean_vertically_integrated_moisture_divergence 1998 0
+760 mean_vertically_integrated_moisture_divergence 1999 0
+761 mean_vertically_integrated_moisture_divergence 2000 0
+762 mean_vertically_integrated_moisture_divergence 2001 0
+763 mean_vertically_integrated_moisture_divergence 2002 0
+764 mean_vertically_integrated_moisture_divergence 2004 0
+765 mean_vertically_integrated_moisture_divergence 2005 0
+766 mean_vertically_integrated_moisture_divergence 2006 0
+767 mean_vertically_integrated_moisture_divergence 2007 0
+768 mean_vertically_integrated_moisture_divergence 2008 0
+769 mean_vertically_integrated_moisture_divergence 2009 0
+770 mean_vertically_integrated_moisture_divergence 2010 0
+771 mean_vertically_integrated_moisture_divergence 2011 0
+772 mean_vertically_integrated_moisture_divergence 2012 0
+773 mean_vertically_integrated_moisture_divergence 2013 0
+774 mean_vertically_integrated_moisture_divergence 2014 0
+775 mean_vertically_integrated_moisture_divergence 2015 0
+776 mean_vertically_integrated_moisture_divergence 2016 0
+777 mean_vertically_integrated_moisture_divergence 2017 0
+778 mean_vertically_integrated_moisture_divergence 2019 0
+779 mean_vertically_integrated_moisture_divergence 2020 0
+780 mean_vertically_integrated_moisture_divergence 2021 0
+781 surface_pressure 1990 0
+782 surface_pressure 1991 0
+783 surface_pressure 1992 0
+784 surface_pressure 1993 0
+785 surface_pressure 1994 0
+786 surface_pressure 1995 0
+787 surface_pressure 1996 0
+788 surface_pressure 1997 0
+789 surface_pressure 1998 0
+790 surface_pressure 1999 0
+791 surface_pressure 2000 0
+792 surface_pressure 2001 0
+793 surface_pressure 2002 0
+794 surface_pressure 2004 0
+795 surface_pressure 2005 0
+796 surface_pressure 2006 0
+797 surface_pressure 2007 0
+798 surface_pressure 2008 0
+799 surface_pressure 2009 0
+800 surface_pressure 2010 0
+801 surface_pressure 2011 0
+802 surface_pressure 2012 0
+803 surface_pressure 2013 0
+804 surface_pressure 2014 0
+805 surface_pressure 2015 0
+806 surface_pressure 2016 0
+807 surface_pressure 2017 0
+808 surface_pressure 2019 0
+809 surface_pressure 2020 0
+810 surface_pressure 2021 0
+811 total_precipitation 1990 0
+812 total_precipitation 1991 0
+813 total_precipitation 1992 0
+814 total_precipitation 1993 0
+815 total_precipitation 1994 0
+816 total_precipitation 1995 0
+817 total_precipitation 1996 0
+818 total_precipitation 1997 0
+819 total_precipitation 1998 0
+820 total_precipitation 1999 0
+821 total_precipitation 2000 0
+822 total_precipitation 2001 0
+823 total_precipitation 2002 0
+824 total_precipitation 2004 0
+825 total_precipitation 2005 0
+826 total_precipitation 2006 0
+827 total_precipitation 2007 0
+828 total_precipitation 2008 0
+829 total_precipitation 2009 0
+830 total_precipitation 2010 0
+831 total_precipitation 2011 0
+832 total_precipitation 2012 0
+833 total_precipitation 2013 0
+834 total_precipitation 2014 0
+835 total_precipitation 2015 0
+836 total_precipitation 2016 0
+837 total_precipitation 2017 0
+838 total_precipitation 2019 0
+839 total_precipitation 2020 0
+840 total_precipitation 2021 0
+841 total_totals_index 1990 0
+842 total_totals_index 1991 0
+843 total_totals_index 1992 0
+844 total_totals_index 1993 0
+845 total_totals_index 1994 0
+846 total_totals_index 1995 0
+847 total_totals_index 1996 0
+848 total_totals_index 1997 0
+849 total_totals_index 1998 0
+850 total_totals_index 1999 0
+851 total_totals_index 2000 0
+852 total_totals_index 2001 0
+853 total_totals_index 2002 0
+854 total_totals_index 2004 0
+855 total_totals_index 2005 0
+856 total_totals_index 2006 0
+857 total_totals_index 2007 0
+858 total_totals_index 2008 0
+859 total_totals_index 2009 0
+860 total_totals_index 2010 0
+861 total_totals_index 2011 0
+862 total_totals_index 2012 0
+863 total_totals_index 2013 0
+864 total_totals_index 2014 0
+865 total_totals_index 2015 0
+866 total_totals_index 2016 0
+867 total_totals_index 2017 0
+868 total_totals_index 2019 0
+869 total_totals_index 2020 0
+870 total_totals_index 2021 0

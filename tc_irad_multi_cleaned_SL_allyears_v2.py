@@ -83,9 +83,16 @@ def process_data(variable, year):
         index_start_october = dates[(dates['start_date'].dt.month <= 3) & (dates['start_date'].dt.year == year)].index[0]
         index_end_march = dates[(dates['end_date'].dt.year == 2021)].index[0]
     else:
-        index_start_october = dates[(dates['start_date'].dt.month >= 10) & (dates['start_date'].dt.year == year)].index[0]
-        index_end_march = dates[(dates['end_date'].dt.month <= 3) & (dates['end_date'].dt.year == year_next)].index[0]
-
+        index_start_october = dates[((dates['start_date'].dt.month >= 10) & (dates['start_date'].dt.year == year)) | ((dates['start_date'].dt.year == year_next) & (dates['start_date'].dt.month <= 3))].index[0]
+        index_end_march_first = dates[((dates['end_date'].dt.month <= 3) & (dates['end_date'].dt.year == year_next))].index
+        index_end_march_second = dates[((dates['end_date'].dt.year == year_next) & (dates['end_date'].dt.month <= 12))].index
+        if len(index_end_march_first) > 0:
+            index_end_march = index_end_march_first[0]
+        else:
+            if year_next == 2003:
+                year_next = 2005
+                index_end_march_second = dates[((dates['end_date'].dt.year == year_next) & (dates['end_date'].dt.month <= 12))].index
+            index_end_march = index_end_march_second[0] - 1
     # Process each storm
     for i in range(index_start_october, index_end_march + 1):
         track = pd.read_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/tc_irad_tracks/tc_1_hour/tc_irad_{i+1}_interp.txt')
