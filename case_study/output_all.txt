@@ -17,3 +17,9 @@ This is array task 127, the variable name is cloud_base_height and the year is 2
 This is array task 126, the variable name is cloud_base_height and the year is 1999. Level is 0
 This is array task 128, the variable name is cloud_base_height and the year is 2001. Level is 0
 This is array task 86, the variable name is 2m_dewpoint_temperature and the year is 2020. Level is 0
+This is array task 144, the variable name is cloud_base_height and the year is 2020. Level is 0
+This is array task 142, the variable name is cloud_base_height and the year is 2017. Level is 0
+This is array task 140, the variable name is cloud_base_height and the year is 2015. Level is 0
+This is array task 139, the variable name is cloud_base_height and the year is 2014. Level is 0
+This is array task 141, the variable name is cloud_base_height and the year is 2016. Level is 0
+This is array task 143, the variable name is cloud_base_height and the year is 2019. Level is 0
