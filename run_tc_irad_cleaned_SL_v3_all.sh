@@ -3,7 +3,7 @@
 #SBATCH --mail-type FAIL
 #SBATCH --mail-user fabien.augsburger@unil.ch
 #SBATCH --chdir /work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/case_study
-#SBATCH --job-name stats_v5_tot_geop_missing
+#SBATCH --job-name stats_v6_tot_1h
 #SBATCH --output /work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/case_study/log/con/con-%A_%a.out
 #SBATCH --error /work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/case_study/log/error/err-%A_%a.err
 #SBATCH --partition cpu
@@ -12,7 +12,7 @@
 #SBATCH --cpus-per-task 1
 #SBATCH --mem 64G
 #SBATCH --time 00:30:00
-#SBATCH --array=1-870
+#SBATCH --array=1-841
 
 # Set your environment
 module purge

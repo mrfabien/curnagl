@@ -6,9 +6,26 @@ from datetime import datetime
 # might be a problem for ML data, since the data is quite large in size
 # Define a function to open datasets and concatenate them
 def open_and_concatenate(year, variable, months, way, level=0):
-    datasets = [xr.open_dataset(f'{way}{variable}/ERA5_{year}-{month}_{variable}.nc') for month in months]
-    if variable == 'geopential' and level != 0:
-        datasets = [dataset.sel(level=level) for dataset in datasets]
+    datasets = []
+    for month in months:
+        dataset = xr.open_dataset(f'{way}{variable}/ERA5_{year}-{month}_{variable}.nc')
+        if variable == 'geopential' and level != 0:
+            dataset = dataset.sel(level=level)
+        
+        # Create a date range with 3-hour intervals starting from midnight
+        start = pd.Timestamp(f"{year}-{month}-01 00:00:00")
+        if month == 12:
+            end = pd.date_range(start=f"{year}-{month}-01", end=f"{str(int(year)+1)}-01-01", freq='M')[0] + pd.Timedelta(hours=21)
+        else:
+            end = pd.date_range(start=f"{year}-{month}-01", end=f"{year}-{month+1}-01", freq='M')[0] + pd.Timedelta(hours=21)
+        date_range = pd.date_range(start, end, freq='3H')
+
+        # Select the data at the specific timesteps
+        dataset = dataset.sel(time=date_range)
+        
+        datasets.append(dataset)
+        dataset.close()
+
     return xr.concat(datasets, dim='time')
 
 # Define a function to calculate statistics
@@ -24,7 +41,7 @@ def calculate_statistics(data_array):
 def log_processing(variable, year, level, storm_number):
     timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     log_message = f'Processed variable: {variable}, Year: {year}, Level: {level}, Timestamp: {timestamp}, Storm number:{storm_number}'
-    with open(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/datasets/processing_log.txt', 'a') as log_file:
+    with open(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/datasets_3h/processing_log_3h.txt', 'a') as log_file:
         log_file.write(log_message + '\n')
 
 # Main function to process data
@@ -82,7 +99,7 @@ def process_data(variable, year, level=0):
             index_end_march = index_end_march_second[0] - 1
     # Process each storm
     for i in range(index_start_october, index_end_march + 1):
-        track = pd.read_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/tc_irad_tracks/tc_1_hour/tc_irad_{i+1}_interp.txt')
+        track = pd.read_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/tc_irad_tracks/tc_3_hours/tc_irad_{i+1}.txt')
         start_date = dates.at[i, 'start_date']
         end_date = dates.at[i, 'end_date']
         storm_data = dataset[specific_var].sel(time=slice(start_date, end_date))
@@ -100,7 +117,7 @@ def process_data(variable, year, level=0):
 
         # Save statistics to CSV files
         for key in stats:
-            pd.DataFrame(stats[key]).to_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/datasets/{variable}/storm_{i+1}/{key}_{i+1}_{level}.csv')
+            pd.DataFrame(stats[key]).to_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/datasets_3h/{variable}/storm_{i+1}/{key}_{i+1}_{level}.csv')
 
     # Log the processing details
     log_processing(variable, year, level, i+1)
