@@ -3,6 +3,10 @@ import numpy as np
 import pandas as pd
 import sys
 from datetime import datetime
+from guppy import hpy
+
+# Créer une instance de heapy
+hp = hpy()
 # might be a problem for ML data, since the data is quite large in size
 # Define a function to open datasets and concatenate them
 def open_and_concatenate(year, variable, months, way, level=0):
@@ -26,6 +30,9 @@ def log_processing(variable, year, level, storm_number):
     log_message = f'Processed variable: {variable}, Year: {year}, Level: {level}, Timestamp: {timestamp}, Storm number:{storm_number}'
     with open(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/datasets/processing_log.txt', 'a') as log_file:
         log_file.write(log_message + '\n')
+
+# Créer une instance de heapy
+hp = hpy()
 
 # Main function to process data
 def process_data(variable, year, level=0):
@@ -110,3 +117,9 @@ if __name__ == '__main__':
     year = sys.argv[2]
     level = sys.argv[3]
     process_data(variable, year, level)
+
+# Obtenir un instantané de l'utilisation de la mémoire
+h = hp.heap()
+
+# Imprimer l'information d'utilisation de la mémoire
+print(h)
