@@ -1,9 +1,9 @@
 #!/bin/bash
 
-#SBATCH --mail-type FAIL
+#SBATCH --mail-type END
 #SBATCH --mail-user fabien.augsburger@unil.ch
 #SBATCH --chdir /work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/case_study
-#SBATCH --job-name stats_v6_tot_1h
+#SBATCH --job-name 1h_s_v3
 #SBATCH --output /work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/case_study/log/con/con-%A_%a.out
 #SBATCH --error /work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/case_study/log/error/err-%A_%a.err
 #SBATCH --partition cpu
@@ -14,14 +14,14 @@
 #SBATCH --time 00:30:00
 #SBATCH --array=1-841
 
-# Set your environment
+# Set your environment batch id from 421 to 841
 module purge
 module load gcc
 source ~/.bashrc
 conda activate kera_lgbm
 
 # Specify the path to the config file
-config=/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/config_all.txt
+config=/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/config_all_geop.txt
 # echo "SLURM_ARRAY_TASK_ID is :${SLURM_ARRAY_TASK_ID}" >> /work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/case_study/output_test_all.txt
 
 # Extract the nom_var for the current $SLURM_ARRAY_TASK_ID
