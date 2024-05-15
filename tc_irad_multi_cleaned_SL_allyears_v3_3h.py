@@ -84,17 +84,17 @@ def process_data(variable, year, level=0):
         index_start_october = dates[(dates['start_date'].dt.month <= 3) & (dates['start_date'].dt.year == year)].index[0]
         index_end_march = dates[(dates['end_date'].dt.year == 2021)].index[0]
     else:
-        index_start_october = dates[((dates['start_date'].dt.month >= 10) & (dates['start_date'].dt.year == year)) | ((dates['start_date'].dt.year == year_next) & (dates['start_date'].dt.month <= 3))].index[0]
+    # Chercher start_october dans year, sinon chercher dès janvier de year_next
+        index_start_october = dates[((dates['start_date'].dt.month >= 10) & (dates['start_date'].dt.year == year)) | ((dates['start_date'].dt.year == year_next) & (dates['start_date'].dt.month >= 1))].index[0]
         index_end_march_first = dates[((dates['end_date'].dt.month <= 3) & (dates['end_date'].dt.year == year_next))].index
+        #print(index_start_october, index_end_march_first, '3rd condition start_october + index_end_march_first')
         if len(index_end_march_first) > 0:
             index_end_march = index_end_march_first[-1]
+            #print(index_end_march, 'index_end_march 1st condition of 2nd condition')
         else:
-            year_next += 2
-            index_end_march_second = dates[((dates['end_date'].dt.year == year_next) & (dates['end_date'].dt.month <= 3))].index
-            if len(index_end_march_second) > 0:
-                index_end_march = index_end_march_second[-1]
-            else:
-                index_end_march = dates[((dates['end_date'].dt.year == year) & (dates['end_date'].dt.month == 12))].index[-1]
+            # Si year_next ne renvoie rien, chercher la dernière instance de tempête dans year
+            index_end_march = dates[((dates['end_date'].dt.year == year) & (dates['end_date'].dt.month <= 12))].index[-1]
+            #print(index_end_march, 'index_end_march 2nd condition of 2nd condition')
     # Process each storm
     for i in range(index_start_october, index_end_march + 1):
         track = pd.read_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/tc_irad_tracks/tc_3_hours/tc_irad_{i+1}.txt')

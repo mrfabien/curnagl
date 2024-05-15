@@ -70,21 +70,34 @@ def process_data(variable, year, level=0):
     if year == 1990:
         index_start_october = dates[(dates['start_date'].dt.month <= 3) & (dates['start_date'].dt.year == year)].index[0]
         index_end_march = dates[(dates['end_date'].dt.month <= 3) & (dates['end_date'].dt.year == year_next)].index[0]
+        print(index_start_october, index_end_march, '1st condition of 1990')
     elif year == 2021:
         index_start_october = dates[(dates['start_date'].dt.month <= 3) & (dates['start_date'].dt.year == year)].index[0]
         index_end_march = dates[(dates['end_date'].dt.year == 2021)].index[0]
+        print(index_start_october, index_end_march, '2021 condition')
     else:
-    # Chercher start_october dans year, sinon chercher dès janvier de year_next
+        #index_start_october = dates[((dates['start_date'].dt.month >= 10) & (dates['start_date'].dt.year == year)) | ((dates['start_date'].dt.year == year_next) & (dates['start_date'].dt.month <= 3))].index[0]
+        # Chercher start_october dans year, sinon chercher dès janvier de year_next
         index_start_october = dates[((dates['start_date'].dt.month >= 10) & (dates['start_date'].dt.year == year)) | ((dates['start_date'].dt.year == year_next) & (dates['start_date'].dt.month >= 1))].index[0]
         index_end_march_first = dates[((dates['end_date'].dt.month <= 3) & (dates['end_date'].dt.year == year_next))].index
-        #print(index_start_october, index_end_march_first, '3rd condition start_october + index_end_march_first')
+        print(index_start_october, index_end_march_first, '3rd condition start_october + index_end_march_first')
         if len(index_end_march_first) > 0:
             index_end_march = index_end_march_first[-1]
-            #print(index_end_march, 'index_end_march 1st condition of 2nd condition')
+            print(index_end_march, 'index_end_march 1st condition of 2nd condition')
         else:
+            #year_next += 2
+            #index_end_march_second = dates[((dates['end_date'].dt.year == year_next) & (dates['end_date'].dt.month <= 3))].index
+            #print(index_end_march_second, 'index_end_march_second 2nd condition of 2nd condition, +2 years')
             # Si year_next ne renvoie rien, chercher la dernière instance de tempête dans year
             index_end_march = dates[((dates['end_date'].dt.year == year) & (dates['end_date'].dt.month <= 12))].index[-1]
-            #print(index_end_march, 'index_end_march 2nd condition of 2nd condition')
+            print(index_end_march, 'index_end_march 2nd condition of 2nd condition')
+            #if len(index_end_march_second) > 0:
+            #    index_end_march = index_end_march_second[-1]
+            #    print(index_end_march, 'index_end_march 1st condition of 3rd condition')
+            #else:
+            #    index_end_march = dates[((dates['end_date'].dt.year == year) & (dates['end_date'].dt.month == 12))].index[-1]
+            #    print(index_end_march, 'index_end_march 2nd condition of 3rd condition')
+
     # Process each storm
     for i in range(index_start_october, index_end_march + 1):
         track = pd.read_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/tc_irad_tracks/tc_1_hour/tc_irad_{i+1}_interp.txt')
@@ -110,11 +123,11 @@ def process_data(variable, year, level=0):
     # Log the processing details
     log_processing(variable, year, level, i+1)
 
-if __name__ == '__main__':
-    variable = sys.argv[1]
-    year = sys.argv[2]
-    level = sys.argv[3]
-    process_data(variable, year, level)
+
+variable = '2m_temperature'
+year = sys.argv[2]
+level = sys.argv[3]
+process_data(variable, year, level)
 
 # Obtenir un instantané de l'utilisation de la mémoire
 h = hp.heap()
