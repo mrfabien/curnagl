@@ -14,7 +14,7 @@ def open_and_concatenate(year, variable, months, way, level=0):
     for month in months:
         dataset = xr.open_dataset(f'{way}/ERA5_{year}-{month}_{variable}.nc')
         #if variable == 'geopential' and level != 0:
-            #dataset = dataset.sel(level=level)
+         #   dataset = dataset.sel(level=level)
         
         # Create a date range with 3-hour intervals starting from midnight
         start = pd.Timestamp(f"{year}-{month}-01 00:00:00")
@@ -45,7 +45,7 @@ def calculate_statistics(data_array):
 def log_processing(variable, year, level, storm_number):
     timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     log_message = f'Processed variable: {variable}, Year: {year}, Level: {level}, Timestamp: {timestamp}, Storm number:{storm_number}'
-    with open(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/datasets/processing_log_3h.txt', 'a') as log_file:
+    with open(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/datasets_3h/processing_log.txt', 'a') as log_file:
         log_file.write(log_message + '\n')
 
 # Créer une instance de heapy
@@ -117,7 +117,7 @@ def process_data(variable, year, level=0):
 
     # Process each storm
     for i in range(index_start_october, index_end_march + 1):
-        track = pd.read_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/tc_irad_tracks/tc_1_hour/tc_irad_{i+1}_interp.txt')
+        track = pd.read_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/tc_irad_tracks/tc_3_hours/tc_irad_{i+1}.txt')
         start_date = dates.at[i, 'start_date']
         end_date = dates.at[i, 'end_date']
         storm_data = dataset[specific_var].sel(time=slice(start_date, end_date))

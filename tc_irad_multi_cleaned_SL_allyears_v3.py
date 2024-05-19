@@ -11,7 +11,7 @@ hp = hpy()
 # Define a function to open datasets and concatenate them
 def open_and_concatenate(year, variable, months, way, level=0):
     datasets = [xr.open_dataset(f'{way}{variable}/ERA5_{year}-{month}_{variable}.nc') for month in months]
-    if variable == 'geopential' and level != 0:
+    if variable == 'geopotential' and level != 0:
         datasets = [dataset.sel(level=level) for dataset in datasets]
     return xr.concat(datasets, dim='time')
 
@@ -113,7 +113,7 @@ def process_data(variable, year, level=0):
 if __name__ == '__main__':
     variable = sys.argv[1]
     year = sys.argv[2]
-    level = sys.argv[3]
+    level = int(sys.argv[3])
     process_data(variable, year, level)
 
 # Obtenir un instantané de l'utilisation de la mémoire

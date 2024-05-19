@@ -9,7 +9,7 @@ def open_and_concatenate(year, variable, months, way, level=0):
     datasets = []
     for month in months:
         dataset = xr.open_dataset(f'{way}{variable}/ERA5_{year}-{month}_{variable}.nc')
-        if variable == 'geopential' and level != 0:
+        if variable == 'geopotential' and level != 0:
             dataset = dataset.sel(level=level)
         
         # Create a date range with 3-hour intervals starting from midnight
@@ -123,5 +123,5 @@ def process_data(variable, year, level=0):
 if __name__ == '__main__':
     variable = sys.argv[1]
     year = sys.argv[2]
-    level = sys.argv[3]
+    level = int(sys.argv[3])
     process_data(variable, year, level)

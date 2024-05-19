@@ -1,0 +1,5 @@
+ArrayTaskID Nom_dossier Année Level
+1 10m_u_component_of_wind 2020 0
+2 10m_v_component_of_wind 2020 0
+3 2m_dewpoint_temperature 2020 0
+4 2m_temperature 2020 0
