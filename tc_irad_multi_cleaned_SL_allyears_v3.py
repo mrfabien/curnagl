@@ -7,7 +7,7 @@ from guppy import hpy
 
 # Créer une instance de heapy
 hp = hpy()
-# might be a problem for ML data, since the data is quite large in size
+# DOESN'T WORK WITH GEOPOTENTIAL, too large
 # Define a function to open datasets and concatenate them
 def open_and_concatenate(year, variable, months, way, level=0):
     datasets = [xr.open_dataset(f'{way}{variable}/ERA5_{year}-{month}_{variable}.nc') for month in months]
