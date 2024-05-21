@@ -39,7 +39,7 @@ level=$(awk -v ArrayTaskID=${SLURM_ARRAY_TASK_ID} '$1==ArrayTaskID {print $4}' $
 # echo "annee is :"$annee >> /work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/case_study/output_test.txt
 
 # Execute the python script
-python3 /work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/tc_irad_multi_cleaned_SL_allyears_v3.py "$nom_var" "$annee" "$level"
+python3 /work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/tc_irad_multi_cleaned_SL_allyears_stats_v3_3h.py "$nom_var" "$annee" "$level"
 
 # Print to a file a message that includes the current $SLURM_ARRAY_TASK_ID, the same variable, and the year of the sample
 echo "This is array task ${SLURM_ARRAY_TASK_ID}, the variable name is ${nom_var} and the year is ${annee}. Level is ${level}" >> /work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/case_study/output_all_3h.txt

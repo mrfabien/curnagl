@@ -12,7 +12,7 @@
 #SBATCH --cpus-per-task 1
 #SBATCH --mem 64G
 #SBATCH --time 00:30:00
-#SBATCH --array=0-841
+#SBATCH --array=1-841
 
 # Set your environment batch id from 421 to 841
 module purge
