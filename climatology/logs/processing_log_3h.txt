@@ -1,0 +1,1 @@
+Processed variable: 2m_temperature, Year: 1990, Level: 0, Timestamp: 2024-05-21 16:12:22, Storm number:8

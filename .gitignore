@@ -3,3 +3,5 @@ case_study/log/*
 datasets/*
 Reanalysis_Europe/*
 WISC/*
+climatology/datasets/*
+climatology/datasets_3h/*
