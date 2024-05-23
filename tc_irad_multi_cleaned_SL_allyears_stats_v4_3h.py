@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import sys
 from datetime import datetime
-# DOESN'T WORK WITH GEOPOTENTIAL, too large
+# no works (DOESN'T WORK WITH GEOPOTENTIAL, too large)
 # Define a function to open datasets and concatenate them
 def open_and_concatenate(year, variable, months, way, level=0):
     datasets = []
@@ -107,7 +107,7 @@ def process_data(variable, year, level=0):
         #, 'skewness': [], 'kurtosis': []
         
         # Process each time step
-        for t_index, time_step in enumerate(storm_data.time):
+        for t_index in range(0, len(storm_data.time)):#, time_step in enumerate(storm_data.time):
             #data_slice = storm_data.sel(time=time_step).values
 
             # Extract coordinates for the current time step
@@ -147,8 +147,8 @@ def process_data(variable, year, level=0):
         for key in stats:
             pd.DataFrame(stats[key]).to_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/datasets_3h/{variable}/storm_{i+1}/{key}_{i+1}_{level}.csv')
 
-    # Log the processing details
-    log_processing(variable, year, level, i+1)
+        # Log the processing details
+        log_processing(variable, year, level, i+1)
 
 if __name__ == '__main__':
     variable = sys.argv[1]
