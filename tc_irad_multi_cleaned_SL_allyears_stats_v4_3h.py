@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import sys
 from datetime import datetime
-# no works (DOESN'T WORK WITH GEOPOTENTIAL, too large)
+# Works for all years
 # Define a function to open datasets and concatenate them
 def open_and_concatenate(year, variable, months, way, level=0):
     datasets = []
