@@ -91,8 +91,38 @@ def process_data(variable, year, level=0):
         start_date = dates.at[i, 'start_date']
         end_date = dates.at[i, 'end_date']
         storm_data = dataset[specific_var].sel(time=slice(start_date, end_date))
+                # Process each time step
+        for t_index in range(0, len(storm_data.time)):#, time_step in enumerate(storm_data.time):
+            #data_slice = storm_data.sel(time=time_step).values
+
+            # Extract coordinates for the current time step
+            lon_e_temp, lon_w_temp, lat_s_temp, lat_n_temp = track.iloc[t_index]
+            lon_test = np.asanyarray(storm_data.longitude[:])
+            lat_test = np.asanyarray(storm_data.latitude[:])
+
+            closest_lon_w = np.abs(lon_test - lon_w_temp).argmin()
+            closest_lon_e = np.abs(lon_test - lon_e_temp).argmin()
+            closest_lat_s = np.abs(lat_test - lat_s_temp).argmin()
+            closest_lat_n = np.abs(lat_test - lat_n_temp).argmin()
+
+            closest_lon_w_coor = lon_test[closest_lon_w]
+            closest_lon_e_coor = lon_test[closest_lon_e]
+            closest_lat_s_coor = lat_test[closest_lat_s]
+            closest_lat_n_coor = lat_test[closest_lat_n]
+
+            # Use .roll to handle the 0°/360° boundary
+            if closest_lon_w_coor < 100 and closest_lon_e_coor > 100:
+                roll_shift = {'longitude': int(round(closest_lon_w_coor, 0)), 'longitude': int(round(closest_lon_e_coor, 0))}
+                storm_data_rolled = storm_data.roll(roll_shift, roll_coords=True)
+            else:
+                storm_data_rolled = storm_data
+
+            # Slice the dataset based on the rolled longitudes and latitudes
+            temp_ds_time = storm_data_rolled.isel(time=t_index)#[specific_var].isel(time=t_index)
+            temp_ds = temp_ds_time.sel(latitude=slice(closest_lat_n_coor, closest_lat_s_coor),
+                                       longitude=slice(closest_lon_e_coor, closest_lon_w_coor)).values
         # Save the storm data to a NetCDF file
-        storm_data.to_netcdf(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/climatology/datasets/{variable}/{variable}_{i+1}_{level}.nc')
+        temp_ds.to_netcdf(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/climatology/datasets/{variable}/{variable}_{i+1}_{level}.nc')
 
 
         '''# Initialize lists to store statistics
@@ -110,8 +140,8 @@ def process_data(variable, year, level=0):
         for key in stats:
             pd.DataFrame(stats[key]).to_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/datasets/{variable}/storm_{i+1}/{key}_{i+1}_{level}.csv')
 '''
-    # Log the processing details
-    log_processing(variable, year, level, i+1)
+        # Log the processing details
+        log_processing(variable, year, level, i+1)
 
 if __name__ == '__main__':
     variable = sys.argv[1]
