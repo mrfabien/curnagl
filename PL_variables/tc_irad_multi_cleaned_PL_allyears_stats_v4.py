@@ -11,7 +11,7 @@ hp = hpy()
 # DOESN'T WORK 10m_v_component_of_wind, 2m_temperature, 10m_u_component_of_wind, 2m_dewpoint_temperature for 2020: too large
 # Define a function to open datasets and concatenate them
 def open_and_concatenate(year, variable, months, way, level=0):
-    datasets = [xr.open_dataset(f'{way}{variable}/ERA5_{year}-{month}_{level}.nc') for month in months]
+    datasets = [xr.open_dataset(f'{way}{variable}/ERA5_{year}-{month}_{variable}_{level}.nc') for month in months]
     return xr.concat(datasets, dim='time')
 
 # Define a function to calculate statistics
@@ -140,11 +140,35 @@ def process_data(variable, year, level=0):
         # Log the processing details
         log_processing(variable, year, level, i+1)
 
+def all_csv_files_exist(variable, year, level):
+    directory = f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/datasets/{variable}'
+    if not os.path.exists(directory):
+        return False
+
+    for storm_dir in os.listdir(directory):
+        storm_path = os.path.join(directory, storm_dir)
+        if os.path.isdir(storm_path):
+            for stat in ['mean', 'min', 'max', 'std']:
+                file_path = os.path.join(storm_path, f'{stat}_{storm_dir.split("_")[1]}_{level}.csv')
+                if not os.path.exists(file_path):
+                    return False
+    return True
+
+'''if __name__ == '__main__':
+    variable = sys.argv[1]
+    year = sys.argv[2]
+    level = int(sys.argv[3])
+    process_data(variable, year, level)'''
+
 if __name__ == '__main__':
     variable = sys.argv[1]
     year = sys.argv[2]
     level = int(sys.argv[3])
-    process_data(variable, year, level)
+
+    if not all_csv_files_exist(variable, year, level):
+        process_data(variable, year, level)
+    else:
+        print(f'All CSV files for variable: {variable}, year: {year}, and level: {level} already exist. Skipping processing.')
 
 # Obtenir un instantané de l'utilisation de la mémoire
 h = hp.heap()
