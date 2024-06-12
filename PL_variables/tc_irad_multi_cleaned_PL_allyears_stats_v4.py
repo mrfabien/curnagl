@@ -115,7 +115,7 @@ def process_data(variable, year, level=0):
             #data_slice = storm_data.sel(time=time_step).values
 
             # Extract coordinates for the current time step
-            lon_e_temp, lon_w_temp, lat_s_temp, lat_n_temp = track.iloc[t_index]
+            lon_e_temp, lon_w_temp, lat_n_temp, lat_s_temp = track.iloc[t_index]
             lon_test = np.asanyarray(storm_data.longitude[:])
             lat_test = np.asanyarray(storm_data.latitude[:])
 
@@ -158,13 +158,13 @@ def process_data(variable, year, level=0):
         # Log the processing details
         log_processing(variable, year, level, i+1)
 
-'''if __name__ == '__main__':
+if __name__ == '__main__':
     variable = sys.argv[1]
     year = sys.argv[2]
     level = int(sys.argv[3])
-    process_data(variable, year, level)'''
+    process_data(variable, year, level)
 
-if __name__ == '__main__':
+'''if __name__ == '__main__':
     variable = sys.argv[1]
     year = sys.argv[2]
     level = int(sys.argv[3])
@@ -172,7 +172,7 @@ if __name__ == '__main__':
     if not all_csv_files_exist(variable, year, level):
         process_data(variable, year, level)
     else:
-        print(f'All CSV files for variable: {variable}, year: {year}, and level: {level} already exist. Skipping processing.')
+        print(f'All CSV files for variable: {variable}, year: {year}, and level: {level} already exist. Skipping processing.')'''
 
 # Obtenir un instantané de l'utilisation de la mémoire
 h = hp.heap()

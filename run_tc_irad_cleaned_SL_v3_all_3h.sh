@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -l
 
 #SBATCH --mail-type END
 #SBATCH --mail-user fabien.augsburger@unil.ch
@@ -16,6 +16,7 @@
 
 # Set your environment
 module purge
+dcsrsoft use 20240303
 module load gcc
 source ~/.bashrc
 conda activate kera_lgbm
