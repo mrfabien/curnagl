@@ -165,7 +165,10 @@ def process_data(variable, year, level=0):
 
         # Save statistics to CSV files
         for key in stats:
-            pd.DataFrame(stats[key]).to_csv(f'{dataset_path}/{variable}/storm_{i+1}/{key}_{i+1}_{level}.csv')
+            directory = f'{dataset_path}/{variable}/storm_{i+1}'
+            if not os.path.exists(directory):
+                os.makedirs(directory)
+            pd.DataFrame(stats[key]).to_csv(f'{directory}/{key}_{i+1}_{level}.csv')
 
         # Log the processing details
         log_processing(variable, year, level, i+1)

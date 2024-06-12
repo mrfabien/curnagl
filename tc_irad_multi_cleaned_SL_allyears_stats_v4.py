@@ -153,18 +153,21 @@ def process_data(variable, year, level=0):
 
         # Save statistics to CSV files
         for key in stats:
-            pd.DataFrame(stats[key]).to_csv(f'{dataset_path}/{variable}/storm_{i+1}/{key}_{i+1}_{level}.csv')
+            directory = f'{dataset_path}/{variable}/storm_{i+1}'
+            if not os.path.exists(directory):
+                os.makedirs(directory)
+            pd.DataFrame(stats[key]).to_csv(f'{directory}/{key}_{i+1}_{level}.csv')
 
         # Log the processing details
         log_processing(variable, year, level, i+1)
 
-if __name__ == '__main__':
+'''if __name__ == '__main__':
     variable = sys.argv[1]
     year = sys.argv[2]
     level = int(sys.argv[3])
-    process_data(variable, year, level)
+    process_data(variable, year, level)'''
 
-'''if __name__ == '__main__':
+if __name__ == '__main__':
     variable = sys.argv[1]
     year = sys.argv[2]
     level = int(sys.argv[3])
@@ -172,7 +175,7 @@ if __name__ == '__main__':
     if not all_csv_files_exist(variable, year, level):
         process_data(variable, year, level)
     else:
-        print(f'All CSV files for variable: {variable}, year: {year}, and level: {level} already exist. Skipping processing.')'''
+        print(f'All CSV files for variable: {variable}, year: {year}, and level: {level} already exist. Skipping processing.')
 
 # Obtenir un instantané de l'utilisation de la mémoire
 h = hp.heap()
