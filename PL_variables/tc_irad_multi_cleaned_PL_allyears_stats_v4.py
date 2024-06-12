@@ -115,7 +115,7 @@ def process_data(variable, year, level=0):
             #data_slice = storm_data.sel(time=time_step).values
 
             # Extract coordinates for the current time step
-            lon_e_temp, lon_w_temp, lat_n_temp, lat_s_temp = track.iloc[t_index]
+            lon_e_temp, lon_w_temp, lat_s_temp, lat_n_temp = track.iloc[t_index]
             lon_test = np.asanyarray(storm_data.longitude[:])
             lat_test = np.asanyarray(storm_data.latitude[:])
 
