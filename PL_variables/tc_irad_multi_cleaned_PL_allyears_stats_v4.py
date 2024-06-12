@@ -6,6 +6,9 @@ from datetime import datetime
 from guppy import hpy
 import os
 
+dataset_path = '/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/DATASETS/datasets_1h'
+track_path = '/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/ALL_TRACKS/tracks_1h'
+
 # Créer une instance de heapy
 hp = hpy()
 # DOESN'T WORK 10m_v_component_of_wind, 2m_temperature, 10m_u_component_of_wind, 2m_dewpoint_temperature for 2020: too large
@@ -27,12 +30,12 @@ def calculate_statistics(data_array):
 def log_processing(variable, year, level, storm_number):
     timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     log_message = f'Processed variable: {variable}, Year: {year}, Level: {level}, Timestamp: {timestamp}, Storm number:{storm_number}'
-    with open(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/datasets/processing_log.txt', 'a') as log_file:
+    with open(f'{dataset_path}/processing_log.txt', 'a') as log_file:
         log_file.write(log_message + '\n')
 
 # Function to check if all CSV files exist
 def all_csv_files_exist(variable, year, level):
-    directory = f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/datasets/{variable}'
+    directory = f'{dataset_path}/{variable}'
     if not os.path.exists(directory):
         return False
 
@@ -98,7 +101,7 @@ def process_data(variable, year, level=0):
             #print(index_end_march, 'index_end_march 2nd condition of 2nd condition')
     # Process each storm
     for i in range(index_start_october, index_end_march + 1):
-        track = pd.read_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/tc_irad_tracks/tc_1_hour/tc_irad_{i+1}_interp.txt')
+        track = pd.read_csv(f'{track_path}/storm_{i+1}.txt')
         start_date = dates.at[i, 'start_date']
         end_date = dates.at[i, 'end_date']
         storm_data = dataset[specific_var].sel(time=slice(start_date, end_date))
@@ -147,7 +150,7 @@ def process_data(variable, year, level=0):
         #for key in stats:
             #pd.DataFrame(stats[key]).to_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/datasets/{variable}/storm_{i+1}/{key}_{i+1}_{level}.csv')
         for key in stats:
-            directory = f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/datasets/{variable}/storm_{i+1}'
+            directory = f'{dataset_path}/{variable}/storm_{i+1}'
             if not os.path.exists(directory):
                 os.makedirs(directory)
             pd.DataFrame(stats[key]).to_csv(f'{directory}/{key}_{i+1}_{level}.csv')

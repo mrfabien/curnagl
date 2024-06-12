@@ -3,6 +3,11 @@ import numpy as np
 import pandas as pd
 import sys
 from datetime import datetime
+import os
+
+dataset_path = '/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/DATASETS/datasets_3h'
+track_path = '/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/ALL_TRACKS/tracks_3h'
+
 # Works for all years
 # Define a function to open datasets and concatenate them
 def open_and_concatenate(year, variable, months, way, level=0):
@@ -41,8 +46,23 @@ def calculate_statistics(data_array):
 def log_processing(variable, year, level, storm_number):
     timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     log_message = f'Processed variable: {variable}, Year: {year}, Level: {level}, Timestamp: {timestamp}, Storm number:{storm_number}'
-    with open(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/datasets_3h/processing_log_3h.txt', 'a') as log_file:
+    with open(f'{dataset_path}/processing_log_3h.txt', 'a') as log_file:
         log_file.write(log_message + '\n')
+
+# Function to check if all CSV files exist
+def all_csv_files_exist(variable, year, level):
+    directory = f'{dataset_path}/{variable}'
+    if not os.path.exists(directory):
+        return False
+
+    for storm_dir in os.listdir(directory):
+        storm_path = os.path.join(directory, storm_dir)
+        if os.path.isdir(storm_path):
+            for stat in ['mean', 'min', 'max', 'std']:
+                file_path = os.path.join(storm_path, f'{stat}_{storm_dir.split("_")[1]}_{level}.csv')
+                if not os.path.exists(file_path):
+                    return False
+    return True
 
 # Main function to process data
 def process_data(variable, year, level=0):
@@ -97,7 +117,7 @@ def process_data(variable, year, level=0):
             #print(index_end_march, 'index_end_march 2nd condition of 2nd condition')
     # Process each storm
     for i in range(index_start_october, index_end_march + 1):
-        track = pd.read_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/tc_irad_tracks/tc_3_hours/tc_irad_{i+1}.txt')
+        track = pd.read_csv(f'{track_path}/storm_{i+1}.csv')
         start_date = dates.at[i, 'start_date']
         end_date = dates.at[i, 'end_date']
         storm_data = dataset[specific_var].sel(time=slice(start_date, end_date))
@@ -145,13 +165,23 @@ def process_data(variable, year, level=0):
 
         # Save statistics to CSV files
         for key in stats:
-            pd.DataFrame(stats[key]).to_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/datasets_3h/{variable}/storm_{i+1}/{key}_{i+1}_{level}.csv')
+            pd.DataFrame(stats[key]).to_csv(f'{dataset_path}/{variable}/storm_{i+1}/{key}_{i+1}_{level}.csv')
 
         # Log the processing details
         log_processing(variable, year, level, i+1)
+
+'''if __name__ == '__main__':
+    variable = sys.argv[1]
+    year = sys.argv[2]
+    level = int(sys.argv[3])
+    process_data(variable, year, level)'''
 
 if __name__ == '__main__':
     variable = sys.argv[1]
     year = sys.argv[2]
     level = int(sys.argv[3])
-    process_data(variable, year, level)
+
+    if not all_csv_files_exist(variable, year, level):
+        process_data(variable, year, level)
+    else:
+        print(f'All CSV files for variable: {variable}, year: {year}, and level: {level} already exist. Skipping processing.')
