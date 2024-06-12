@@ -30,6 +30,21 @@ def log_processing(variable, year, level, storm_number):
     with open(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/datasets/processing_log.txt', 'a') as log_file:
         log_file.write(log_message + '\n')
 
+# Function to check if all CSV files exist
+def all_csv_files_exist(variable, year, level):
+    directory = f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/datasets/{variable}'
+    if not os.path.exists(directory):
+        return False
+
+    for storm_dir in os.listdir(directory):
+        storm_path = os.path.join(directory, storm_dir)
+        if os.path.isdir(storm_path):
+            for stat in ['mean', 'min', 'max', 'std']:
+                file_path = os.path.join(storm_path, f'{stat}_{storm_dir.split("_")[1]}_{level}.csv')
+                if not os.path.exists(file_path):
+                    return False
+    return True
+
 # Créer une instance de heapy
 hp = hpy()
 
@@ -139,20 +154,6 @@ def process_data(variable, year, level=0):
 
         # Log the processing details
         log_processing(variable, year, level, i+1)
-
-def all_csv_files_exist(variable, year, level):
-    directory = f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/datasets/{variable}'
-    if not os.path.exists(directory):
-        return False
-
-    for storm_dir in os.listdir(directory):
-        storm_path = os.path.join(directory, storm_dir)
-        if os.path.isdir(storm_path):
-            for stat in ['mean', 'min', 'max', 'std']:
-                file_path = os.path.join(storm_path, f'{stat}_{storm_dir.split("_")[1]}_{level}.csv')
-                if not os.path.exists(file_path):
-                    return False
-    return True
 
 '''if __name__ == '__main__':
     variable = sys.argv[1]
