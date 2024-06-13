@@ -2803,3 +2803,12 @@ Processed variable: 10m_u_component_of_wind, Year: 2020, Level: 0, Timestamp: 20
 Processed variable: 2m_dewpoint_temperature, Year: 2020, Level: 0, Timestamp: 2024-06-13 15:56:52, Storm number:94
 Processed variable: 2m_dewpoint_temperature, Year: 2020, Level: 0, Timestamp: 2024-06-13 15:56:53, Storm number:95
 Processed variable: 2m_dewpoint_temperature, Year: 2020, Level: 0, Timestamp: 2024-06-13 15:56:53, Storm number:96
+Processed variable: 10m_u_component_of_wind, Year: 2021, Level: 0, Timestamp: 2024-06-13 16:11:31, Storm number:96
+Processed variable: 10m_v_component_of_wind, Year: 2021, Level: 0, Timestamp: 2024-06-13 16:11:33, Storm number:96
+Processed variable: 2m_dewpoint_temperature, Year: 2021, Level: 0, Timestamp: 2024-06-13 16:11:58, Storm number:96
+Processed variable: cloud_base_height, Year: 2009, Level: 0, Timestamp: 2024-06-13 16:12:03, Storm number:65
+Processed variable: cloud_base_height, Year: 2010, Level: 0, Timestamp: 2024-06-13 16:12:05, Storm number:66
+Processed variable: cloud_base_height, Year: 2008, Level: 0, Timestamp: 2024-06-13 16:12:08, Storm number:62
+Processed variable: cloud_base_height, Year: 2008, Level: 0, Timestamp: 2024-06-13 16:12:08, Storm number:63
+Processed variable: cloud_base_height, Year: 2008, Level: 0, Timestamp: 2024-06-13 16:12:09, Storm number:64
+Processed variable: cloud_base_height, Year: 2002, Level: 0, Timestamp: 2024-06-13 16:12:10, Storm number:46

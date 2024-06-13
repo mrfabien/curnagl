@@ -1,0 +1,7 @@
+This is array task 29, the variable name is 10m_u_component_of_wind and the year is 2021. Level is 0
+This is array task 58, the variable name is 10m_v_component_of_wind and the year is 2021. Level is 0
+This is array task 87, the variable name is 2m_dewpoint_temperature and the year is 2021. Level is 0
+This is array task 135, the variable name is cloud_base_height and the year is 2009. Level is 0
+This is array task 136, the variable name is cloud_base_height and the year is 2010. Level is 0
+This is array task 134, the variable name is cloud_base_height and the year is 2008. Level is 0
+This is array task 129, the variable name is cloud_base_height and the year is 2002. Level is 0
