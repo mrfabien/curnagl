@@ -82,8 +82,10 @@ def process_data(variable, year, level=0):
     specific_var = next(var for var in dataset.variables if var not in ['longitude', 'latitude', 'time', 'level'])
 
     # Import all tracks and convert dates
-    dates = pd.read_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/storms_start_end.csv', parse_dates=['start_date', 'end_date'])
+    dates = pd.read_csv(f'/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/updated_storms_with_steps_and_index_ordered.csv', 
+                    parse_dates=['start_date', 'end_date'])
     dates['year'] = dates['start_date'].dt.year
+    dates.drop(columns=['Unnamed: 0'], inplace=True)
 
     # Find the indices for storms within the specified timeframe
     if year == 1990:
@@ -106,7 +108,8 @@ def process_data(variable, year, level=0):
             #print(index_end_march, 'index_end_march 2nd condition of 2nd condition')
     # Process each storm
     for i in range(index_start_october, index_end_march + 1):
-        track = pd.read_csv(f'{track_path}/storm_{i+1}.csv')
+        storm_number = dates.at[i, 'storm_index']
+        track = pd.read_csv(f'{track_path}/storm_{storm_number}.csv')
         start_date = dates.at[i, 'start_date']
         end_date = dates.at[i, 'end_date']
         storm_data = dataset[specific_var].sel(time=slice(start_date, end_date))
@@ -120,7 +123,12 @@ def process_data(variable, year, level=0):
             #data_slice = storm_data.sel(time=time_step).values
 
             # Extract coordinates for the current time step
-            lon_e_temp, lon_w_temp, lat_s_temp, lat_n_temp = track.iloc[t_index]
+
+            lon_e_temp = track.loc[t_index, 'lon_east']
+            lon_w_temp = track.loc[t_index, 'lon_west']
+            lat_s_temp = track.loc[t_index, 'lat_south']
+            lat_n_temp = track.loc[t_index, 'lat_north']
+
             lon_test = np.asanyarray(storm_data.longitude[:])
             lat_test = np.asanyarray(storm_data.latitude[:])
 
@@ -153,13 +161,13 @@ def process_data(variable, year, level=0):
 
         # Save statistics to CSV files
         for key in stats:
-            directory = f'{dataset_path}/{variable}/storm_{i+1}'
+            directory = f'{dataset_path}/{variable}/storm_{storm_number}'
             if not os.path.exists(directory):
                 os.makedirs(directory)
-            pd.DataFrame(stats[key]).to_csv(f'{directory}/{key}_{i+1}_{level}.csv')
+            pd.DataFrame(stats[key]).to_csv(f'{directory}/{key}_{storm_number}_{level}.csv')
 
         # Log the processing details
-        log_processing(variable, year, level, i+1)
+        log_processing(variable, year, level, storm_number)
 
 if __name__ == '__main__':
     variable = sys.argv[1]
