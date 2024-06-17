@@ -34,7 +34,7 @@ full_pressure = [
 ]
 
 #years = range(1992,2022)
-months = range(1,13)
+months = [1,2,3,10,11,12]
 
 # open each file in the path_to_ML directory and select one level at a time and then register it in the path_to_scratch directory
 
