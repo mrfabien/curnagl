@@ -12,9 +12,9 @@
 #SBATCH --cpus-per-task 1
 #SBATCH --mem 64G
 #SBATCH --time 00:30:00
-#SBATCH --array=1-609
+#SBATCH --array=1-42
 
-# Set your environment
+# Set your environment 1-609
 module purge
 dcsrsoft use 20240303
 module load gcc
@@ -22,7 +22,7 @@ source ~/.bashrc
 conda activate kera_lgbm
 
 # Specify the path to the config file
-config=/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/PL_variables/config_ML_to_SL_vert.txt
+config=/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/PL_variables/config_ML_to_SL_rel_2011.txt
 # echo "SLURM_ARRAY_TASK_ID is :${SLURM_ARRAY_TASK_ID}" >> /work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/case_study/output_test_all.txt
 
 # Extract the nom_var for the current $SLURM_ARRAY_TASK_ID
