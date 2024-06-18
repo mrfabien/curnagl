@@ -12,7 +12,7 @@
 #SBATCH --cpus-per-task 1
 #SBATCH --mem 64G
 #SBATCH --time 02:00:00
-#SBATCH --array=1-336
+#SBATCH --array=43-84
 
 # Set your environment 1-609
 module purge
