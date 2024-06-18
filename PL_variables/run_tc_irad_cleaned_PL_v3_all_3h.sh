@@ -22,7 +22,7 @@ source ~/.bashrc
 conda activate kera_lgbm
 
 # Specify the path to the config file
-config=/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/PL_variables/config_ML_to_SL_rel_2011.txt
+config=/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/PL_variables/config_ML_to_SL_vert_2011.txt
 # echo "SLURM_ARRAY_TASK_ID is :${SLURM_ARRAY_TASK_ID}" >> /work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/case_study/output_test_all.txt
 
 # Extract the nom_var for the current $SLURM_ARRAY_TASK_ID
