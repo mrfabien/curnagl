@@ -3,7 +3,7 @@
 #SBATCH --mail-type END
 #SBATCH --mail-user fabien.augsburger@unil.ch
 #SBATCH --chdir /work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/PL_variables
-#SBATCH --job-name 1h_vert_vel_all
+#SBATCH --job-name 1h_spe
 #SBATCH --output /work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/PL_variables/log/con/con-%A_%a.out
 #SBATCH --error /work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/PL_variables/log/error/err-%A_%a.err
 #SBATCH --partition cpu
@@ -12,7 +12,7 @@
 #SBATCH --cpus-per-task 1
 #SBATCH --mem 64G
 #SBATCH --time 00:30:00
-#SBATCH --array=1-42
+#SBATCH --array=1-609
 
 # Set your environment 1-609
 module purge
@@ -22,7 +22,7 @@ source ~/.bashrc
 conda activate kera_lgbm
 
 # Specify the path to the config file
-config=/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/PL_variables/config_ML_to_SL_rel_vert_0121.txt
+config=/work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/PL_variables/config_ML_to_SL_spe_9021_ye.txt
 # echo "SLURM_ARRAY_TASK_ID is :${SLURM_ARRAY_TASK_ID}" >> /work/FAC/FGSE/IDYST/tbeucler/default/fabien/repos/curnagl/case_study/output_test_all.txt
 
 # Extract the nom_var for the current $SLURM_ARRAY_TASK_ID
