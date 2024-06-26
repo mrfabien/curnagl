@@ -27,6 +27,7 @@ mean_surface_net_short_wave_radiation_flux
 mean_vertically_integrated_moisture_divergence
 relative_humidity
 surface_pressure
+specific_rain_water_content
 total_precipitation
 total_totals_index
 vertical_velocity
